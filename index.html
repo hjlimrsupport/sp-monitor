@@ -406,23 +406,108 @@
     </div>
 
     <script>
+        const i18n = {
+            ko: {
+                title: "Splashtop JP 통합 모니터링",
+                subtitle: "사이트맵 차분 조사를 통한 신속한 변화 감지 서비스",
+                help: "❓ 도움말",
+                runScan: "🚀 사이트 분석 실행 (Run Scan)",
+                cleanup: "🧹 데이터 정제",
+                reset: "🧨 데이터 리셋",
+                statTotal: "현재 전체 URL",
+                statDelta: "이전 대비 증감",
+                statToday: "오늘 분석 완료",
+                statLast: "최종 업데이트",
+                tabReport: "📋 실시간 리포트",
+                tabHistory: "📈 히스토리 및 통계",
+                tabUrls: "🔗 전체 URL 목록",
+                noChange: "🎉 감지된 새로운 변화가 없습니다. 사이트가 안정적입니다.",
+                loading: "분석 중...",
+                scaning: "사이트 분석 중... 잠시만 기다려주세요.",
+                cumTitle: "📅 최근 7일간 누적 변화 요약",
+                cumSub: "가끔 방문하셔도 괜찮습니다! 지난 일주일간 사이트에 새로 추가되거나 삭제된 모든 페이지를 모아서 보여드립니다.",
+                newTitle: "[+] 일주일간 신규 추가",
+                delTitle: "[-] 일주일간 삭제/제외",
+                historyTitle: "📜 최근 조사 이력 (최신 30회)",
+                status: "상태",
+                url: "주소",
+                desc: "설명",
+                details: "상세",
+                view: "보기",
+                webNotice: "🔔 자동 업데이트 모드: 웹 버전은 매일 아침 9시에 자동으로 분석 리포트를 갱신합니다.",
+                helpTitle: "📖 사용 가이드",
+                helpContent: `1. <b>분석 실행</b>: 상단 버튼을 누르면 사이트맵을 분석하여 신규/수정된 페이지를 찾습니다.<br>2. <b>기준점</b>: 오늘 처음 실행한 시점의 데이터를 기준으로 하루 동안의 모든 변화를 추적합니다.<br>3. <b>상태값 안내</b>:<ul><li><b style="color:var(--success)">NEW</b>: 새로 추가된 뉴스/블로그</li><li><b style="color:var(--warning)">CHANGED</b>: 내용이 바뀐 페이지</li><li><b style="color:var(--danger)">DELETED</b>: 사라진 페이지</li></ul>`
+            },
+            ja: {
+                title: "Splashtop JP 統合モニタリング",
+                subtitle: "サイトマップ差分分析による迅速な更新検知サービス",
+                help: "❓ ヘルプ",
+                runScan: "🚀 サイト分析実行 (Run Scan)",
+                cleanup: "🧹 データクリーンアップ",
+                reset: "🧨 データリセット",
+                statTotal: "現在全URL数",
+                statDelta: "前回比増減",
+                statToday: "本日分析完了",
+                statLast: "最終更新日",
+                tabReport: "📋 リアルタイムレポート",
+                tabHistory: "📈 履歴と統計",
+                tabUrls: "🔗 全URLリスト",
+                noChange: "🎉 前回の調査以降、新しい変更は検知されませんでした。サイトは安定しています。",
+                loading: "分析中...",
+                scaning: "サイト分析中... 少々お待ちください。",
+                cumTitle: "📅 直近7日間の累積変更要約",
+                cumSub: "時々の訪問でも大丈夫です！過去1週間にサイトへ新たに追加または削除された全ページをまとめて表示します。",
+                newTitle: "[+] 1週間以内の新規追加",
+                delTitle: "[-] 1週間以内の削除/除外",
+                historyTitle: "📜 最近の調査履歴 (最新30件)",
+                status: "状態",
+                url: "アドレス",
+                desc: "説明",
+                details: "詳細",
+                view: "詳細",
+                webNotice: "🔔 自動更新モード: Web版は毎日午前9時に自動的に分析レポートを更新します。",
+                helpTitle: "📖 利用ガイド",
+                helpContent: `1. <b>分析実行</b>: 上部ボタンを押すとサイトマップを分析し、新規/修正されたページを探します。<br>2. <b>基準点</b>: 本日最初に実行した時点のデータを基準に、1日間のすべての変更を追跡します。<br>3. <b>ステータス案内</b>:<ul><li><b style="color:var(--success)">NEW</b>: 新規追加されたニュース/ブログ</li><li><b style="color:var(--warning)">CHANGED</b>: 内容が変更されたページ</li><li><b style="color:var(--danger)">DELETED</b>: 削除されたページ</li></ul>`
+            }
+        };
+
+        const lang = navigator.language.startsWith('ja') ? 'ja' : 'ko';
+        const t = i18n[lang];
+
         let currentData = {};
         let historyChart = null;
 
         async function init() {
-            // GitHub Pages 환경인지 로컬 환경인지 확인
+            // UI 번역 적용
+            document.title = t.title;
+            document.querySelector('.title-group h1').innerText = t.title;
+            document.querySelector('.title-group p').innerText = t.subtitle;
+            document.querySelector('.btn-help').innerText = t.help;
+            document.querySelector('.btn-primary').innerText = t.runScan;
+            document.querySelectorAll('.btn-outline')[0].innerText = t.cleanup;
+            document.querySelector('.btn-danger').innerText = t.reset;
+            document.querySelectorAll('.stat-label')[0].innerText = t.statTotal;
+            document.querySelectorAll('.stat-label')[1].innerText = t.statDelta;
+            document.querySelectorAll('.stat-label')[2].innerText = t.statToday;
+            document.querySelectorAll('.stat-label')[3].innerText = t.statLast;
+            document.querySelectorAll('.tab')[0].innerText = t.tabReport;
+            document.querySelectorAll('.tab')[1].innerText = t.tabHistory;
+            document.querySelectorAll('.tab')[2].innerText = t.tabUrls;
+            document.querySelector('#loading-overlay p').innerText = t.scaning;
+            document.querySelector('.modal-content h2').innerText = t.helpTitle;
+            document.querySelector('.modal-content ol').innerHTML = t.helpContent;
+            document.querySelectorAll('.modal-content .btn')[0].innerText = lang === 'ko' ? '닫기' : '閉じる';
+
             const isGitHub = window.location.hostname.includes('github.io');
             if (isGitHub) {
-                // 웹 버전에서는 관리 버튼들을 숨김 처리 (안전 및 혼란 방지)
                 const actionBar = document.querySelector('.action-bar');
                 if (actionBar) {
                     actionBar.style.display = 'none';
-                    // 대신 안내 메시지 추가
                     const notice = document.createElement('div');
                     notice.className = 'stat-card';
                     notice.style.borderLeft = '5px solid var(--warning)';
                     notice.style.marginBottom = '2rem';
-                    notice.innerHTML = `<b style="color:var(--warning)">🔔 자동 업데이트 모드</b>: 웹 버전은 매일 아침 9시에 자동으로 분석 리포트를 갱신합니다.`;
+                    notice.innerHTML = `<b style="color:var(--warning)">${t.webNotice}</b>`;
                     actionBar.parentNode.insertBefore(notice, actionBar);
                 }
             }
@@ -588,10 +673,12 @@
                 </div>
             </div>`;
 
-            // Table
-            let tableHtml = cumuHtml + '<h3 style="margin-top:2.5rem">📜 개별 조사 이력</h3><table style="width:100%; border-collapse: collapse; margin-top:1rem; text-align:left; border: 1px solid var(--border);">';
+            // Table (Show only latest 30 entries for UI performance)
+            let tableHtml = cumuHtml + '<h3 style="margin-top:2.5rem">📜 최근 조사 이력 (최신 30회)</h3><table style="width:100%; border-collapse: collapse; margin-top:1rem; text-align:left; border: 1px solid var(--border);">';
             tableHtml += '<thead style="background:#f1f5f9"><tr><th style="padding:0.7rem">날짜/시간</th><th>전체</th><th>신규</th><th>삭제</th><th>상세</th></tr></thead><tbody>';
-            history.slice().reverse().forEach((h, idx) => {
+
+            const tableData = history.slice().reverse().slice(0, 30);
+            tableData.forEach((h, idx) => {
                 const rowId = `history-row-${idx}`;
                 const hasDetails = (h.new_count > 0 || h.deleted_count > 0);
 
