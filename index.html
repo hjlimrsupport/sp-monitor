@@ -410,6 +410,22 @@
         let historyChart = null;
 
         async function init() {
+            // GitHub Pages 환경인지 로컬 환경인지 확인
+            const isGitHub = window.location.hostname.includes('github.io');
+            if (isGitHub) {
+                // 웹 버전에서는 관리 버튼들을 숨김 처리 (안전 및 혼란 방지)
+                const actionBar = document.querySelector('.action-bar');
+                if (actionBar) {
+                    actionBar.style.display = 'none';
+                    // 대신 안내 메시지 추가
+                    const notice = document.createElement('div');
+                    notice.className = 'stat-card';
+                    notice.style.borderLeft = '5px solid var(--warning)';
+                    notice.style.marginBottom = '2rem';
+                    notice.innerHTML = `<b style="color:var(--warning)">🔔 자동 업데이트 모드</b>: 웹 버전은 매일 아침 9시에 자동으로 분석 리포트를 갱신합니다.`;
+                    actionBar.parentNode.insertBefore(notice, actionBar);
+                }
+            }
             await refreshData();
         }
 
