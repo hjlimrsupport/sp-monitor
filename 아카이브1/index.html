@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splashtop JP Monitoring Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007AFF;
+            --success: #34C759;
+            --warning: #FF9500;
+            --danger: #FF3B30;
+            --bg: #0A0A0C;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text: #F5f5f7;
+            --text-muted: #8E8E93;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .report-meta {
+            display: flex;
+            gap: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .exec-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .summary-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .summary-card h3 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .summary-card .val {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .summary-card .diff {
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+        }
+
+        .report-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .change-item {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .change-item:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .item-url {
+            color: var(--primary);
+            font-size: 0.85rem;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-changed {
+            background: rgba(255, 149, 0, 0.2);
+            color: var(--warning);
+        }
+
+        .badge-new {
+            background: rgba(52, 199, 89, 0.2);
+            color: var(--success);
+        }
+
+        .badge-deleted {
+            background: rgba(255, 59, 48, 0.2);
+            color: var(--danger);
+        }
+
+        .item-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.8rem;
+            font-style: italic;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 0.5rem;
+        }
+
+        .empty-msg {
+            color: var(--text-muted);
+            padding: 2rem;
+            text-align: center;
+            background: var(--card-bg);
+            border-radius: 12px;
+        }
+
+        .refresh-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            float: right;
+        }
+
+        .baseline-info {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- New Top Entry Bar -->
+        <div class="add-url-section top-bar">
+            <div class="entry-flex">
+                <div class="entry-label">
+                    <h3>Quick Add</h3>
+                    <p>Register new URL manually</p>
+                </div>
+                <input type="text" id="manual-url" placeholder="https://www.splashtop.co.jp/..." class="entry-input">
+                <button onclick="addManualUrl()" class="entry-btn">Add to Monitor</button>
+                <button class="refresh-btn sync-btn" onclick="location.reload()">SYNC NOW</button>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <!-- 70% Main Report Area -->
+            <div class="report-main">
+                <header>
+                    <h1>Analysis Report</h1>
+                    <div class="report-meta" id="report-meta"></div>
+                </header>
+
+                <div class="exec-summary" id="exec-summary"></div>
+                <div id="report-content"></div>
+            </div>
+
+            <!-- 30% Sidebar URLs -->
+            <aside class="url-sidebar">
+                <div class="sidebar-header">
+                    <h3>Registered URLs</h3>
+                    <span id="url-list-count" class="count-badge">0</span>
+                </div>
+                <div class="url-scroll-list" id="url-sidebar-list">
+                    <!-- URL list will be injected -->
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <style>
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Top Bar Styling */
+        .add-url-section.top-bar {
+            margin-bottom: 2rem;
+            padding: 1.2rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .entry-flex {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .entry-label {
+            min-width: 150px;
+        }
+
+        .entry-label h3 {
+            font-size: 0.9rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .entry-label p {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .entry-input {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .entry-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .entry-btn:hover {
+            background: #0062cc;
+        }
+
+        .sync-btn {
+            padding: 0.7rem 1.5rem;
+            background: var(--success);
+            float: none;
+        }
+
+        /* Layout 70:30 */
+        .main-layout {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .report-main {
+            flex: 7;
+            min-width: 0;
+        }
+
+        .url-sidebar {
+            flex: 3;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 1rem;
+            max-height: calc(100vh - 2rem);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .count-badge {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .url-scroll-list {
+            overflow-y: auto;
+            flex: 1;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            padding-right: 0.5rem;
+        }
+
+        .url-scroll-list::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .url-scroll-list::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+        }
+
+        .sidebar-url-item {
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .sidebar-url-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--primary);
+        }
+
+        @media (max-width: 1100px) {
+            .main-layout {
+                flex-direction: column;
+            }
+
+            .url-sidebar {
+                width: 100%;
+                position: static;
+                max-height: 400px;
+            }
+
+            .entry-flex {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const [summary, meta, structure] = await Promise.all([
+                    fetch('site_summary.json').then(r => r.json()),
+                    fetch('site_report_meta.json').then(r => r.json()),
+                    fetch('site_structure.json').then(r => r.json())
+                ]);
+                renderReport(summary, meta);
+                renderUrlList(structure);
+            } catch (e) {
+                document.getElementById('report-content').innerHTML = `
+                    <div class="empty-msg">No analysis data found. Run 'smart_monitor.py' first.</div>
+                `;
+            }
+        });
+
+        function renderUrlList(structure) {
+            const listDiv = document.getElementById('url-sidebar-list');
+            const countDiv = document.getElementById('url-list-count');
+            const urls = Object.keys(structure).sort();
+
+            countDiv.innerText = `Total Registered: ${urls.length}`;
+            listDiv.innerHTML = urls.map(url => `
+                <a href="${url}" target="_blank" class="sidebar-url-item" title="${url}">${url}</a>
+            `).join('');
+        }
+
+        async function addManualUrl() {
+            const input = document.getElementById('manual-url');
+            const url = input.value.trim();
+            if (!url) return;
+
+            try {
+                const res = await fetch('/add_url', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url })
+                });
+                const result = await res.json();
+                if (result.status === 'success') {
+                    alert('URL added successfully! Run Sync to update report.');
+                    location.reload();
+                } else if (result.status === 'exists') {
+                    alert('This URL is already registered.');
+                }
+            } catch (e) {
+                alert('Connection to server failed. Please ensure the monitor server is running.');
+            }
+        }
+
+        function formatDate(iso) {
+            if (!iso || iso === "Initial Run") return iso;
+            return new Date(iso).toLocaleString('ja-JP');
+        }
+
+        function renderReport(summary, meta) {
+            const metaDiv = document.getElementById('report-meta');
+            const summaryDiv = document.getElementById('exec-summary');
+            const contentDiv = document.getElementById('report-content');
+
+            metaDiv.innerHTML = `
+                <span>Baseline: ${formatDate(meta.prev_time)}</span>
+                <span>Current Scan: ${formatDate(meta.curr_time)}</span>
+            `;
+
+            const diff = meta.curr_count - meta.prev_count;
+            const diffText = diff >= 0 ? `+${diff}` : `${diff}`;
+
+            const changed = summary.filter(i => i.status === 'changed');
+            const newPages = summary.filter(i => i.status === 'new');
+            const deleted = summary.filter(i => i.status === 'deleted');
+
+            summaryDiv.innerHTML = `
+                <div class="summary-card">
+                    <h3>Total Pages</h3>
+                    <span class="val">${meta.curr_count}</span>
+                    <span class="diff" style="color:${diff >= 0 ? 'var(--success)' : 'var(--danger)'}">${diffText} vs last survey</span>
+                </div>
+                <div class="summary-card">
+                    <h3>Modified</h3>
+                    <span class="val" style="color:var(--warning)">${changed.length}</span>
+                </div>
+                <div class="summary-card">
+                    <h3>New</h3>
+                    <span class="val" style="color:var(--success)">${newPages.length}</span>
+                </div>
+                <div class="summary-card">
+                    <h3>Missing</h3>
+                    <span class="val" style="color:var(--danger)">${deleted.length}</span>
+                </div>
+            `;
+
+            let html = '';
+
+            // 1. Changed Section
+            html += `<div class="report-section">
+                <div class="section-title">Modifications <span>Detected ${changed.length} changes</span></div>
+                ${changed.length > 0 ? changed.map(i => renderItem(i, 'changed')).join('') : '<div class="empty-msg">No modifications detected.</div>'}
+            </div>`;
+
+            // 2. New Section
+            html += `<div class="report-section">
+                <div class="section-title">New Pages <span>Detected ${newPages.length} additions</span></div>
+                ${newPages.length > 0 ? newPages.map(i => renderItem(i, 'new')).join('') : '<div class="empty-msg">No new pages detected.</div>'}
+            </div>`;
+
+            // 3. Deleted Section
+            html += `<div class="report-section">
+                <div class="section-title">Removed/Missing <span>Detected ${deleted.length} omissions</span></div>
+                ${deleted.length > 0 ? deleted.map(i => renderItem(i, 'deleted')).join('') : '<div class="empty-msg">No missing pages detected.</div>'}
+            </div>`;
+
+            contentDiv.innerHTML = html;
+        }
+
+        function renderItem(i, status) {
+            const baseline = formatDate(i.baseline_date);
+            return `
+                <div class="change-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">${i.title || 'No Title'}</div>
+                            <a href="${i.url}" target="_blank" class="item-url">${i.url}</a>
+                            <div class="baseline-info">Previous check: ${baseline}</div>
+                        </div>
+                        <span class="badge badge-${status}">${status}</span>
+                    </div>
+                    <div class="item-desc">${i.description || 'No description available for this page.'}</div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,962 @@
+[
+    {
+        "url": "https://www.splashtop.co.jp",
+        "title": "Splashtop 快適リモートアクセス＆リモートサポート提供サービス",
+        "description": "Splashtop（スプラッシュトップ）は、手元のデバイスから遠隔地にある端末に快適にリモートアクセス、リモートサポートが提供できるサービスです。",
+        "status": "changed",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/%e4%ba%ba%e6%9d%90/251212",
+        "title": "“安心の認証基盤”をSSOで実現！Splashtopが支えるゼロトラスト時代のヘルプデスク  | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/all",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/betsukawa.html",
+        "title": "Splashtop 導入実績 株式会社別川製作所様",
+        "description": "他社にはなかったサクサク感と、CAD操作にも耐えられるスペック。迷うことなく、導入を決断できました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/construction",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/construction/hamamatsucity2",
+        "title": "浜松市役所のリモートワークが進化！ブラウザからのログイン対応により端末への初期設定が簡単に。運用方法変更で得られた効果とは？ | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/dandelion.html",
+        "title": "Splashtop 導入実績 株式会社ダンデライオンアニメーションスタジオ様",
+        "description": "アーティストも納得の使用感。大ヒット作品を創るスタジオが、Splashtopを選んだ理由",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/finance",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/food",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/fujisoft.html",
+        "title": "Splashtop 導入実績 富士ソフト株式会社様",
+        "description": "富士ソフト株式会社様の執行役員 山岡寛典様にSplashtopの道入目的や道入にあたっての障壁などについて伺いました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/gaming",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/government",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/government/hamamatsucity",
+        "title": "浜松市役所 LGWANリモートアクセスサービス導入事例 | スプラッシュトップ",
+        "description": "総合行政ネットワークを使用する多くの自治体が抱える外部アクセス勤務の課題を、LGWANリモートアクセスで解決した浜松市役所の導入事例です。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/government/hamamatsucity2",
+        "title": "浜松市役所のリモートワークが進化！ブラウザからのログイン対応により端末への初期設定が簡単に。運用方法変更で得られた効果とは？ | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/government/st-joseph%ca%bcs-school-for-the-deaf",
+        "title": "米St. Josephʼs School for the Deaf 聾学校、生徒や教員のデバイスをリモートサポート、防犯カメラへのリモートで犯罪防止や物理的なセキュリティ強化も実現 | スプラッシュトップ",
+        "description": "St. Joseph’s School for the Deafは、耳に障害を持つ子ども、健常児共に平等に、さまざまな目標や成長を与える教育を行ってきた150年以上もの長い歴史を誇るニューヨーク州ブロンクスにある聾学校です。Splashtop Enterpriseを導入し、わずか2名のITサポートで300台以上の遠隔デバイスのリモートサポートや学校内の監視カメラへのモニタリングを可能にしました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/gree.html",
+        "title": "Splashtop 導入実績 グリー株式会社様",
+        "description": "グリー株式会社が選んだ“リモートワークの最適解” - Splashtop導入の背景と効果とは",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/humanresources",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/humanresources/251212",
+        "title": "“安心の認証基盤”をSSOで実現！Splashtopが支えるゼロトラスト時代のヘルプデスク  | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/image.html",
+        "title": "Splashtop 導入実績 株式会社イマージュ様",
+        "description": "デュアルディスプレイ対応でクリエイターに快適な作業環境を。管理者の手離れの良さも決め手に。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/imaging",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/imaging/boxel-studiosplashtop-enteprise",
+        "title": "多くのハリウッド作品を手がけるBoxel Studio、Splashtop Entepriseの導入で動画クリエーターがどこからでも効率的な映像制作を実現 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/information",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/information/usideu",
+        "title": "わずか10分で対応完了。顧客別アクセスをセキュアに管理 ーSplashtopで実現した効率的な対応体制ー | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/khara.html",
+        "title": "導入実績 株式会社カラー様",
+        "description": "Splashtop Bussiness 導入事例インタビュー",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/koiwai.html",
+        "title": "Splashtop 導入実績 小岩井乳業株式会社様",
+        "description": "小岩井乳業株式会社の事業戦略部 鎌田出様にSplashtop導入の経緯や実際にどのようにSplashtopを利用して課題解決をされたのかといったことについて伺いました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/manufacturing",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/manufacturing/osakasealingprinting2",
+        "title": "従来のSplashtop活用に加え、SOS・AR機能で在宅トラブルにも対応するサポート体制へ | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/medical_welfare",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/medical_welfare/himawari_ishikawa",
+        "title": "利用者支援の新しいかたち。ひまわり工房が語る「就労支援施設のリモートワークの効果」 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/meidai.html",
+        "title": "Splashtop 導入実績 文京区立茗台中学校 様",
+        "description": "文京区立 茗台中学校 校長 戸部 範一様にSplashtopの道入の目的・経緯や導入後の効果などについて伺いました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/nankai.html",
+        "title": "Splashtop 導入実績 南海電気鉄道株式会社様",
+        "description": "スプラッシュトップは「会社と同じことができるやん」スプラッシュトップの導入の背景や、現在までの利用状況、今後のスプラッシュトップに対する期待などを伺いました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/nissay.html",
+        "title": "Splashtop 導入実績 ニッセイアセットマネジメント株式会社様",
+        "description": "Macやタブレットでも使えるシステムが必要。スプラッシュトップの導入の背景や、現在までの利用状況、今後のスプラッシュトップに対する期待などを伺いました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/noiz.html",
+        "title": "Splashtop 導入実績 NOIZ様",
+        "description": "NOIZの創造性を支えるために。高性能PCのリモート操作で、多様な働き方の実現へ。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/osaka-sealing-printing.html",
+        "title": "Splashtop 導入実績 大阪シーリング印刷株式会社様",
+        "description": "社員のITリテラシーに左右されないセキュリティ機能で、安心して提供できる。双方が気持ちよく使えるリモートツールです。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/platinumgames-1.html",
+        "title": "Splashtop 導入実績 プラチナゲームズ株式会社様",
+        "description": "「最も大きなポイントは、セキュリティレベルをコントロールできること」リモートワークまでの経緯や導入前後での変化を中心にお伺いしました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/railway",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/saison.html",
+        "title": "Splashtop 導入実績 株式会社セゾン情報システムズ様",
+        "description": "家事が終わった後、自宅で仕事がしたいという時にSplashtopを利用。スプラッシュトップの導入の背景や、現在までの利用状況、今後のスプラッシュトップに対する期待などを伺いました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/sanzigen-first.html",
+        "title": "Splashtop 導入実績 株式会社サンジゲン様 前編",
+        "description": "クリエイターと管理者の要望をバランスよく叶えるには？最適解が「スプラッシュトップ」だった。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/shipbuilding",
+        "title": "導入事例 | スプラッシュトップ",
+        "description": "高速で快適に動作するSplashtop（スプラッシュトップ）は、金融関係、製造関係、建築関係、教育関係、医療関係など様々な業種で非常に多くのお客様にご利用頂いております。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/shirogumi.html",
+        "title": "Splashtop 導入実績 株式会社白組様",
+        "description": "「決め手は、管理者もユーザーも満足の使用感」スプラッシュトップを導入した経緯や、導入後の従業員の反応、今後の活用計画についてお伺いしました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/sogofuto.html",
+        "title": "Splashtop 導入実績 総合埠頭株式会社様",
+        "description": "決め手は、専門知識がなくても扱えるシンプルさと、導入しやすい価格帯。小規模でも取り組みやすいシステムでした。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/sumitomodensetsu.html",
+        "title": "Splashtop 導入実績 住友電設株式会社様",
+        "description": "現場スタッフの利便性を損なわない。セキュアにＣＡＤをリモート操作！",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/tgaia.html",
+        "title": "Splashtop 導入実績 株式会社ティーガイア様",
+        "description": "ソリューション事業本部 ICT企画開発部 片山浩一様に海外からの利用についてのご感想や、MDM製品との組み合わせについてのご意見などを伺いました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/achievements/todai.html",
+        "title": "Splashtop 導入実績 東京大学様",
+        "description": "非常勤の教員や学生にも自宅から大学のコンピューターを使えるようにしたかった。スプラッシュトップの導入の背景や、現在までの利用状況、今後のスプラッシュトップに対する期待などを伺いました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/blog",
+        "title": "Splashtop ブログ - 法人・商用向けリモートデスクトップ",
+        "description": "リモートデスクトップ「Splashtop」に関する様々な情報を発信するブログです。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/compare/teamviewer-alternative",
+        "title": "TeamViewerを超える選択肢、Splashtopでコスト削減と安心のリモート環境｜Splashtop",
+        "description": "Splashtopは、TeamViewerに代わる優れたリモートアクセスソリューションです。動作が軽く、コンピュータへの負荷が少ない上、コストパフォーマンスも抜群。手頃な価格で高品質なサービスと安心のセキュリティを提供します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/contact",
+        "title": "Splashtop お問い合わせ",
+        "description": "",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/customer-support",
+        "title": "お客様サポート｜Splashtop",
+        "description": "サポートに関するよくあるご質問をまとめたページです。製品マニュアル、お客様の声、そしてお問い合わせ窓口を確認できます。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/dl",
+        "title": "スプラッシュトップのパンフレットができました！",
+        "description": "「スプラッシュトップが考える快適なリモートワーク」のパンフレットができました！",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/download",
+        "title": "ソフトウェアダウンロード | スプラッシュトップ",
+        "description": "Splashtop（スプラッシュトップ）は、手元のデバイスから遠隔地にある端末に快適にリモートアクセス、リモートサポートが提供できるサービスです。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/feature/allied-telesis.html",
+        "title": "「Allied Telesis」の強み｜Splashtop",
+        "description": "SplashtopのOn-PremやFoxpassはAllied Telesisの製品と相性が抜群です。今回は実際にアライドテレシスさんの京橋イノベーションセンターに訪問して、こだわりのオフィスや製品の魅力をお伺いしてきました。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/feature/chromebook.html",
+        "title": "1人情シスでも快適・セキュアなリモートワーク環境を実現可能!Chromebookがリモートワークに適している理由とは?",
+        "description": "簡単かつスピーディーに、初期費用を抑えた安全なリモートワークを実現できるChromebookとリモートデスクトップの組み合わせをご紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/feature/eizo.html",
+        "title": "映像のプロから選ばれ続ける理由は？世界が認めるEIZO製品には、追求された独自技術やこだわりが込められていた。",
+        "description": "クリエイターに愛されるEIZOモニターのこだわりとは？",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/feature/wacom.html",
+        "title": "ペンタブ×リモート技術でクリエイティブを諦めない。ワコムが目指すこれからの働き方とは?",
+        "description": "筆圧・傾きに対応したスプラッシュトップの新機能「リモートスタイラス」。これは、ワコム製デジタルペンの技術提供なしには実現しなかった画期的な機能です。本記事では株式会社ワコム様のご紹介とともに、同社がどのようにユーザーのリモートワークに向き合ってきたか、リモートスタイラス開発までの経緯をご紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow",
+        "title": "リモートワーク・IT情報ノウハウ | スプラッシュトップ",
+        "description": "Splashtop（スプラッシュトップ）は、手元のデバイスから遠隔地にある端末に快適にリモートアクセス、リモートサポートが提供できるサービスです。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/01",
+        "title": "VPNとは？基本知識や仕組み、メリット・デメリットを解説！",
+        "description": "安全なリモートワーク環境を整えるためには、VPNをはじめとする通信技術への理解や自社にあったリモートワーク環境の構築・ツール の選択が必要不可欠です。この記事では、VPNの基礎や注意点、導入方法からVPNに代わるリモートワーク環境の構築ツールについて紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/02",
+        "title": "VDIとは？仮想デスクトップとVPN、リモートデスクトップの違いなどを紹介",
+        "description": "この記事では、VDIのメリット・デメリットやVPN、リモートデスクトップとの比較などについて解説します。それぞれの仕組みやセキュリティ上のリスクを理解したうえで、自社に合ったリモートワーク環境の構築やシステム・ツールを選択しましょう。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/03",
+        "title": "VPNは本当に安全なのか？VPNに潜むセキュリティリスクを解説！",
+        "description": "急速にテレワーク化が進む昨今、企業にはVPNのセキュリティリスクの再認識と早急な対応が求められています。本記事では、VPNのセキュリティリスクや過去に起こったセキュリティ事故の事例、セキュリティ対策の具体的な方法を解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/04",
+        "title": "VPNが遅い！　繋がらない！　原因と対策をテレワーク導入前にチェック",
+        "description": "VPNはその仕組み上、通信速度が遅くなることがあります。原因として、VPNサーバーへの過負荷や接続距離の遠さ、ISP側の速度制限などが考えられます。本記事ではVPNの通信速度が遅い理由や繋がらない原因、その対策方法について解説していきます。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/05",
+        "title": "VPNは危険？　情報漏洩事故から見るセキュリティ対策の重要性と手段",
+        "description": "VPN製品の脆弱性については専門機関から過去に何度も注意喚起されていましたが、情報漏洩の危険性は残存しています。本記事では、2020年8月に実際に起こったVPNの情報漏洩の事例などを紹介し、テレワークにおける必要なセキュリティ対策について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/06",
+        "title": "リモートデスクトップって何ができるの？　仕組みや製品、VDI・VPNとの違いを解説！",
+        "description": "新型コロナウイルス感染対策としてテレワークが普及したことから、リモートデスクトップが企業からも注目を集めています。この記事ではリモートデスクトップの概要からメリット・デメリット、同じくテレワーク実施の手段として検討されるVDI、VPNとの違いについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/07",
+        "title": "ゼロトラストネットワークとは？　テレワーク普及で求められるセキュリティ対策",
+        "description": "ゼロトラストネットワークって何？　どうして今注目されているの？　などゼロトラストネットワークの定義や登場の背景について解説します。また、急増するテレワークとの関連や、企業での実践方法についても分かりやすく説明します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/08",
+        "title": "テレワークで利用するリモートデスクトップのセキュリティ対策・基礎知識・利用上の注意点 | スプラッシュトップ",
+        "description": "テレワークの実施のために、リモートアクセスの環境構築を迫られている企業が増えています。リモートアクセス環境を構築する手段として、リモートデスクトップがありますが、導入にあたってはセキュリティ面に十分配慮する必要があります。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/09",
+        "title": "脱VPNの鍵はゼロトラスト！　VPNが抱える課題とその解決方法とは？",
+        "description": "テレワーク環境を整えるためにVPNを導入する企業が多い一方、実際に運用するなかでVPNに関するさまざまな課題感じるようになり、「脱VPN」を掲げる企業も増えてきているといいます。この記事では、VPNの課題や脱VPNをかなえるための方法について、実際の脱VPN事例を交えて解説します。脱VPNを検討中の方はぜひ参考にしてください。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/10",
+        "title": "リモートアクセスとは？　仕組みや実現方法をわかりやすく解説！",
+        "description": "テレワークやリモートワークの増加で注目を集める「リモートアクセス」ですが、どんなものを指すのかよく分からないという方も多いのでは？　リモートアクセスの概要や仕組み、種類とその特徴比較など、知っておくべきリモートアクセスに関する知識全般を解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/11",
+        "title": "快適なテレワーク環境の構築に必要なシステムの種類と注意点！",
+        "description": "多くの企業でテレワーク導入が進む一方、具体的に何を準備すればよいかわからず、テレワークの実施に踏み切れていない企業も少なくありません。この記事ではテレワークに必要なシステムの紹介や、安全で快適な環境構築のために知っておくべきことについて紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/12",
+        "title": "テレワークでのセキュリティ事故事例とその対策方法を徹底解説！",
+        "description": "テレワークで十分なセキュリティ対策ができなければ、思わぬセキュリティ事故につながる可能性があります。総務省のガイドラインで紹介されている内容を中心に、テレワークにおけるセキュリティ事故の事例、事故を起さないための対策方法を解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/13",
+        "title": "Chromebookでも動画編集は可能!?　おすすめのアプリや知っておくべき注意点を解説！ | スプラッシュトップ",
+        "description": "Googleが開発した「Chromebook」は、ノートPCの新しい選択肢として注目を集めています。そんなChromebookで動画編集をしたいと考える人も多いでしょう。Chromebookで動画編集をする際におすすめの編集アプリや注意点などを紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/14",
+        "title": "iPhone／iPadの動画編集におすすめのアプリや注意点！　高度な動画も編集できる？",
+        "description": "iPhoneやiPadを使えば誰でも動画編集が行える時代ですが、多くの動画編集アプリのなかからどれを選ぶべきかは悩むところ。iPhone／iPadでおすすめの動画編集アプリや選び方と注意点、高度な動画編集をするために知っておくべき“M1チップ”について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/15",
+        "title": "営業職におけるテレワーク導入のメリットや注意点とは？　導入の流れも紹介！",
+        "description": "お客様と直接会って商談や打ち合わせをする営業職ではテレワークは難しいとされがちですが、実際は十分可能です。さらに導入することで多くのメリットも期待できます。営業職がテレワークを導入するメリットと併せて、導入の流れや注意点を解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/16",
+        "title": "人事のテレワーク、メリットや課題は？　人事評価など課題のソリューションも紹介！",
+        "description": "人事部のテレワーク導入には、多くのメリットがあります。その一方で人事評価や労務管理など、これまでのやり方では難しい課題もでてきます。今回は、人事部でテレワークを導入するメリットや課題、テレワークを成功させるポイントについて紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/17",
+        "title": "経理のテレワークを実現するには？　課題と対策、導入のメリットを解説！",
+        "description": "テレワークの導入が難しい代表的な部門の一つが経理部門です。その原因には根強い紙文化やセキュリティ面の課題があげられます。この記事では、経理部門でテレワークを導入するうえでの課題や、導入のために必要なこと、テレワーク導入のメリットについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/18",
+        "title": "製造業のテレワークの鍵はIoT！　導入手順や課題、解決策を解説",
+        "description": "製造業でテレワークを実施するには「現場業務をどうするか？」などいくつかの課題があり、その解決の鍵として“IoT”の存在が挙げられます。ここでは、製造業でテレワークを実施する際の課題や、IoTを活用したテレワークの導入方法について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/19",
+        "title": "テレワーク導入における情シスの課題とは？　対策方法や導入のメリットを解説",
+        "description": "企業でテレワーク導入が進むにつれ、情シス部門にかかる負担は大きくなっています。特に “ひとり情シス”の場合はさらに大きな負担を感じているでしょう。そこで今回は、テレワーク導入において情シスが抱える課題について掘り下げ、その対策方法を提案します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/20",
+        "title": "テレワーク導入における社内ヘルプデスクの課題と実施すべき3つの対策",
+        "description": "テレワーク導入の動きが加速する一方、必要に迫られてとりあえず導入したという企業も多く、導入後の社員のフォローなどで頭を悩ませているのが社内ヘルプデスクです。そこで今回は、テレワーク導入で社内ヘルプデスクが抱える課題とおすすめの対策について紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/21",
+        "title": "設計部門でテレワークを導入するための課題と対策方法をわかりやすく解説！",
+        "description": "設計職は高性能PCが必要なCADソフトなどを業務に使用するため、テレワーク導入のハードルが高い職種の一つです。しかしいくつかの課題を解決すれば設計職でも導入は可能です。この記事では設計部門でテレワークを導入する方法を詳しく説明します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/22",
+        "title": "研究職もテレワーク導入できる？　解決すべき課題と対策方法",
+        "description": "研究職では機材を用いた研究が重要な業務となるため、テレワークは難しいと思われがちです。しかし、テレワーク導入によって出勤率を15％まで下げた企業もあるなど、工夫次第では導入も可能です。研究職のテレワーク導入における課題と対策について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/23",
+        "title": "建設業でもテレワークは実施可能？　実施における課題と対策方法",
+        "description": "現場業務があるためテレワークの実施は難しいとされる建設業ですが、実施している企業もあり不可能ではありません。ただし実施のためには解決しなければならない課題があります。建設業のテレワークの現状と併せて、課題とその対策方法について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/24",
+        "title": "法務部門のテレワーク実施率は8割強!?　知っておくべき課題と実現するためのポイントを解説！",
+        "description": "契約書の捺印業務等があるためテレワークをあきらめている法務担当者もいるかもしれません。しかし実際には、法務部門のテレワーク率が8割を超えるというデータもあり、いくつかの課題を解決すれば実施は十分に可能です。この記事ではその課題と対策方法を解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/25",
+        "title": "シングルサインオン（SSO）とは？　導入におけるメリットと3つの注意点！",
+        "description": "利用するWebサービスが増えると、その分アカウント情報も増えます。「パスワードを忘れてログインできない」ということも多くなるでしょう。そんな煩雑なパスワード管理を解決するために昨今注目されている「シングルサインオン（SSO）」について、分かりやすく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/26",
+        "title": "シングルサインオンでよく聞くSAML認証とは？　仕組みの概要、導入のメリットを解説！ | スプラッシュトップ",
+        "description": "シングルサインオンと一緒に話題に挙がることが多いSAML認証。名前は知っていても仕組みや他の方式との違いまでは知らないという方が多いのでは？今回は、SAML認証の仕組みや認証の流れ、どうしてSAMLが選ばれるのかといったメリットについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/27",
+        "title": "大学教職員のテレワーク導入の課題とは？　現状やメリットについても解説！",
+        "description": "大学教職員の働き方としてテレワークを検討している大学も多いのではないでしょうか。しかし、テレワークを導入するには解決しなければならない課題がいくつかあります。大学におけるテレワークの普及状況と併せて、導入におけるメリットや課題について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/28",
+        "title": "IdPとは？　役割や機能、SPとの違いをわかりやすく解説！",
+        "description": "SAML認証によるシングルサインを理解するうえで知っておく必要がある、IdPについて解説します。IdPで実現できることや用いるメリット、SPとの違いなどをわかりやすくまとめていますので、認証やセキュリティに興味がある方はぜひ参考にしてください。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/29",
+        "title": "SCIMとは？　概要、仕組み、SAMLとの役割の違いについて | スプラッシュトップ",
+        "description": "複数のサービスにおけるID管理で重要な役割を果たすのがSCIMです。さらに近年、企業でのクラウドサービスの利用が一般的になりSCIMの重要性は増しています。今回は、SCIMの概要や仕組み、およびSAMLとの役割の違いについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/30",
+        "title": "Wake On LANとは？　遠隔から会社PCの電源をオンにする方法や設定手順を解説！ | スプラッシュトップ",
+        "description": "リモートデスクトップを利用してテレワーク中、誤って会社PCの電源をオフにしてしまい困った、という経験はありませんか？　こんな時に便利な技術がWake On LANです。Wake On LANの概要、Windows10での設定方法、利用時の注意点などについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/31",
+        "title": "IDaaSとは？　IDaaSを用いてできることから利用するメリットを解説",
+        "description": "企業のクラウドサービス利用が増えるにつれて、複雑化する社員のID管理。それらを解消するためのID管理基盤としてIDaaSがあります。IDaaSでできることから必要とされる背景、利用するメリット、パスワードマネージャーとの違いについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/32",
+        "title": "不正アクセス対策を万全に！5つの防止策と事後対策、被害事例を紹介",
+        "description": "不正アクセスは、個人や企業問わず、多大な被害が発生する可能性があるサイバー攻撃の一種です。この記事では、不正アクセスの具体的なリスクや発生原因、実際に起きた事例の紹介、不正アクセスを防ぐために有効な対策、そして被害に遭った際に取るべき対応について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/33",
+        "title": "VPNに接続できない原因は？　対処法をWindows10／Mac／iPhoneそれぞれ解説",
+        "description": "VPNに接続できない時に確認すべき5つの項目について解説します。あわせて基本の対処法とWindows10／Mac／iPhoneそれぞれの対処法についてもご紹介。「接続はできるけど遅い」という場合の解決策についても触れますので、ぜひ参考にしてみてください。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/34",
+        "title": "ハイブリッドクラウドとは？　基礎知識から環境の使い分け例まで分かりやすく解説",
+        "description": "業務でクラウドサービスを利用する企業も増えるなか、注目されているのがハイブリッドクラウドです。ハイブリッドクラウドの基本知識、メリット・デメリットから、ハイブリッドクラウドで何が実現できるのか、環境の使い分け例まで分かりやすく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/35",
+        "title": "テレワーク関連の補助金・助成金一覧　～テレワーク導入に必要な準備についても解説",
+        "description": "感染症の蔓延をきっかけに企業のテレワーク導入の動きが活発化しており、それを後押ししようと国や自治体・団体が補助金や助成金制度を実施しています。テレワークに関する補助金・助成金の一覧、テレワーク導入のために準備しなければならない環境について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/36",
+        "title": "オンプレミス・クラウドとは？　特徴の比較や移行時に検討すべきことを解説",
+        "description": "以前までは企業のIT環境にオンプレミスが採用されることが一般的でしたが、クラウドが登場してからは移行を考える企業が増えています。オンプレミスとクラウドの概要から両者の違い、それぞれのメリット・デメリット、移行する際に知っておくべきことを解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/37",
+        "title": "リモートデスクトップとVPNの通信量は？　テレワーク一日にかかる通信量や減らすためのコツ",
+        "description": "テレワーク1日に必要な通信量や、通信量を減らすためのコツなどについて解説します。加えて、リモートデスクトップやVPNなどリモートアクセスの手段別に通信量や通信速度、セキュリティの特徴も紹介しますので、最適なテレワーク環境を考える参考にしてください。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/38",
+        "title": "エッジコンピューティングとは？　概要とIoTやクラウドとの関係を徹底解説",
+        "description": "エッジコンピューティングは、5GやIoTの普及に欠かせない技術であり、今後その重要性がさらに高まると予想されています。エッジコンピューティングの概要から、注目される背景、IoTやクラウドコンピューティングとの関係などについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/39",
+        "title": "MECとは？　意味や特徴、エッジコンピューティングとの違いを分かりやすく解説",
+        "description": "5Gを最大限に活用するために注目されているものの一つにMEC（マルチアクセスエッジコンピューティング）があります。この記事では、MECの概要や特徴、MECによって実現できること、エッジコンピューティングとの違いなどについて分かりやすく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/40",
+        "title": "シンクライアントとは？｜基礎知識と導入のメリット・デメリット",
+        "description": "感染症の拡大で社会のデジタル化が進み、同時にセキュリティ対策の重要性が増すなかで、「シンクライアント」への注目が高まっています。本記事では、シンクライアントの概要から導入するメリットやデメリット、シンクライアントの種類などを分かりやすく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/41",
+        "title": "今さら聞けない「仮想化」とは？　概要やメリット、クラウドとの違いをわかりやすく解説 | スプラッシュトップ",
+        "description": "「仮想化」という言葉は知っていても、しっかりと説明できない人が多いのではないでしょうか。煩雑なITインフラ環境の構築や運用を効率的に行なうために用いられる技術が仮想化です。仮想化の概要やメリット、クラウドとの違いなどわかりやすく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/42",
+        "title": "仮想環境とは？　仮想マシンの種類やメリット・デメリット、運用時のポイントを解説",
+        "description": "多くの企業でICT基盤を仮想化して運用することが一般的となってきた背景には、仮想環境がもたらす多くのメリットの存在が挙げられます。仮想環境の概要、仮想化方式の種類、利用するメリット・デメリット、運用する際のポイントや注意点について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/43",
+        "title": "多要素認証とは？　高セキュリティを実現する認証方式の基礎知識と二段階認証・二要素認証との違い",
+        "description": "パスワードによる従来の認証方式だけでは不正アクセスを防ぐことが難しくなってきた昨今、急速に浸透しつつある認証方式が多要素認証です。この記事では、多要素認証の概要や種類といった基礎知識、二段階認証や二要素認証との違いを分かりやすく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/44",
+        "title": "H.265とは？　H.264との違いから仕組みや利用する際の注意点までわかりやすく解説",
+        "description": "高品質な動画を快適に閲覧するためにはデータ圧縮が不可欠となります。圧縮方式のなかで注目を集めているのが「H.265」です。この記事では、H.265の概要やH.264との違い、H.265の仕組みや利用する際の注意点をわかりやすく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/45",
+        "title": "フレームレート（fps）とは？　概要から数値による違い、注意点までわかりやすく解説！",
+        "description": "フレームレート（fps）が何を表す単位で、数値の違いでどんな変化があるのか正しく理解できていますか？　この記事では、フレームレートの基本知識、数値による体感や利用用途の違い、高フレームレートを利用する際の注意点などについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/46",
+        "title": "SDPとは？　概要や仕組み、VPNとの違い【図解あり】",
+        "description": "社内・社外というネットワークの境界が曖昧さを増す現代のICT環境。それに対抗するセキュリティ対策として注目されているのが「SDP（Software Defined Perimeter）」です。SDPの概要、仕組みやメリット、VPNとの違いについて、図などを用いてわかりやすく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/47",
+        "title": "IT-BCP実現のための具体的対策とポイント｜BCPとは？という基本から丁寧に解説！",
+        "description": "ITが企業活動を行ううえで欠かせないものとなるにつれ、有事の際にもITシステムを継続運用できる体制の確保が求められるようになりました。そこで注目されているのが「IT-BCP」です。BCP・IT-BCPの概要から実現に向けた具体的な対策方法やポイントについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/48",
+        "title": "BIMとは？　CADとの違いや活用のメリットを簡単にわかりやすく解説",
+        "description": "近年建築業界のICT活用において注目を集めているのがBIM（Building Information Modeling）です。日本企業でも活用例が増えてきています。BIMの概要からCADとの違い、活用するメリットまで、わかりやすく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/49",
+        "title": "プロキシサーバーとは？遅い原因や快適に利用するために意識すべきことを解説！",
+        "description": "プロキシサーバーはセキュリティ対策や利便性の向上などを目的として利用されますが、“遅い”という悩みが良く聞かれます。この記事ではプロキシサーバーの基礎知識から遅くなる原因、その対処方法について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/50",
+        "title": "リフレッシュレートとは？Hzが高いメリットと確認・変更方法を解説！",
+        "description": "リフレッシュレート（Hz）が何を表す指標で、高い数値がどんなメリットをもたらすか知っていますか？この記事では、リフレッシュレートの基本知識と確認方法、フレームレートとの違い、高レートのメリットと注意点などについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/51",
+        "title": "HDRとSDRの違いとは？それぞれの概要とHDRのメリット・デメリットもわかる！",
+        "description": "HDR（High Dynamic Range）とSDR（Standard Dynamic Range）はどちらも映像や画像に関する技術のことです。本記事ではHDRと従来のSDRの違いやHDRのメリット・デメリットについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/52",
+        "title": "HDRとは？概要や対応のテレビ・モニターを選ぶ際のポイントについて",
+        "description": "テレビにおけるHDRと写真のHDRには違いがあることをご存じでしょうか。この記事ではその違いとテレビにおけるHDRの概要、HDRテレビのメリット、HDRに対応しているテレビやモニターの選び方について解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/53",
+        "title": "SSL-VPNとは何かわかりやすく解説｜接続方式やIPsec-VPNとの違いもわかる",
+        "description": "VPNには種類やプロトコルがいくつかあります。そのVPNプロトコルの１つであるSSL-VPNはご存じでしょうか？本記事では、SSL-VPNとは何か、接続方式やIPsec-VPNとの違いなどについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/54",
+        "title": "IPsecとは？概要や機能、IPsec-VPNとSSL-VPNの違いを解説",
+        "description": "IPsecは通信データの暗号化や改ざんを検知するプロトコルスイートで、VPNに用いられることが多いです。本記事では、IPsecの機能やモード、プロトコルの種類、IPsec-VPNとSSL-VPNの違いなどについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/55",
+        "title": "HDRとは？スマホで簡単に撮れる設定方法も解説！",
+        "description": "iPhoneをはじめとしたスマホのカメラには、「HDR機能」が搭載されていることが多いです。HDR機能を上手く活用できれば、手軽に綺麗な写真が撮影できます。この記事ではHDRの概要や仕組み、スマホでHDR画像を撮影する方法などについて紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/56",
+        "title": "【画像あり】Windows 10でVPNに接続する方法｜エラーの対処法も解説",
+        "description": "Windows 10でVPNを接続する設定手順を画面キャプチャとともに解説します。また、VPN接続エラーが発生したときの対処法も併せて紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/57",
+        "title": "iPhoneでもVPNに接続できる？設定方法とメリット、デメリットを解説",
+        "description": "VPNはパソコンだけでなく、iPhoneなどのスマホでも接続できることをご存じでしょうか？この記事では、比較的安全な通信を行えるVPNをiPhoneで設定する方法とiPhoneでVPNを利用するメリット、デメリットを解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/58",
+        "title": "VRとは|仕組みやAR・MRとの違い、体験方法まで徹底解説！",
+        "description": "次々と新しい技術が生み出されるICTの世界。その中で注目されているVRを本記事で紹介していきます。少しずつ身近になってきたVRについて、概要から仕組み、その体験方法や活用例など詳しく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/59",
+        "title": "BYODのセキュリティリスクと対策、運用ポイントを解説",
+        "description": "BYOD導入には、セキュリティリスクを十分に考慮し、正しい対策を行うことが重要です。導入後も定期的に見直す必要があります。この記事では、BYODの概要からセキュリティリスクとその対策、安全に運用していくためのポイントなどについて解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/60",
+        "title": "テレワーク導入時のメリット・デメリットとは？企業・従業員別に対策まで紹介",
+        "description": "働き方の多様化やICT技術の進歩によって、テレワークが普及しました。しかし、業界によっては「導入が難しい」企業もあるでしょう。この記事では、テレワーク導入のメリット、デメリットとその対策を企業側と従業員、それぞれの観点から詳しく解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/61",
+        "title": "テレワーク導入時の課題は大きく6つ！解決策や導入事例も併せて紹介 | スプラッシュトップ",
+        "description": "感染症対策や働き方の多様性から、近年テレワークを導入する企業が増えています。テレワークは精神的・身体的余裕が生まれやすいなど利点が多いものの、課題があるのも事実です。この記事では、テレワーク導入時の課題と解決策、導入事例を紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/62",
+        "title": "テレワーク中はコミュニケーションが不足しやすい？活性化するための5つの工夫を紹介",
+        "description": "テレワーク中は他の従業員とコミュニケーションが不足しやすいです。それによって生じる課題が仕事に影響しないように、この記事では、テレワーク中にコミュニケーション不足になる理由や課題を洗い出し、5つの解決策を紹介します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/63",
+        "title": "総務でもテレワークはできる？課題と実施方法、メリットを解説",
+        "description": "さまざまな企業でテレワークの導入が進んでいるなか、総務部門でのテレワーク導入がまだまだ難しい現状があります。本記事では総務部門のテレワークが難しい理由や、総務部門でもテレワークを実現するための方法を解説します。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    },
+    {
+        "url": "https://www.splashtop.co.jp/knowhow/64_a",
+        "title": "育児・介護休業法の改正ポイントは？担当者が知っておきたい点をチェック | スプラッシュトップ",
+        "description": "Splashtop（スプラッシュトップ）は、手元のデバイスから遠隔地にある端末に快適にリモートアクセス、リモートサポートが提供できるサービスです。",
+        "status": "stable",
+        "baseline_date": "2026-02-02T16:47:49.469999",
+        "last_checked": "2026-02-04T11:11:04.225394"
+    }
+]

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splashtop JP 통합 모니터링 센터</title>
+    <!-- 고급 폰트 및 아이콘 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #0055ff;
+            --primary-light: #e6f0ff;
+            --bg: #f8fafc;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+            --card-bg: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .title-group h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .title-group p {
+            color: var(--text-sub);
+            margin: 0.2rem 0 0 0;
+        }
+
+        .btn-help {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-sub);
+            transition: all 0.2s;
+        }
+
+        .btn-help:hover {
+            background: var(--border);
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.1s, opacity 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-outline {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+        }
+
+        .btn-danger {
+            background: #fee2e2;
+            color: var(--danger);
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            font-weight: 600;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 0.3rem;
+            display: block;
+        }
+
+        .stat-delta {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 0.2rem;
+        }
+
+        .delta-plus {
+            color: var(--success);
+        }
+
+        .delta-minus {
+            color: var(--danger);
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 1.5rem;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+
+        .tab {
+            padding: 0.8rem 0.2rem;
+            font-weight: 700;
+            color: var(--text-sub);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* Report List */
+        .report-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 0.8rem;
+            overflow: hidden;
+        }
+
+        .item-header {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .item-header:hover {
+            background: #fafafa;
+        }
+
+        .badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-right: 0.8rem;
+        }
+
+        .badge-new {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .badge-changed {
+            background: #fef9c3;
+            color: #854d0e;
+        }
+
+        .badge-deleted {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .item-title {
+            font-weight: 700;
+            flex-grow: 1;
+        }
+
+        .item-content {
+            padding: 1rem;
+            border-top: 1px solid var(--border);
+            background: #fcfcfc;
+            display: none;
+        }
+
+        .url-link {
+            color: var(--primary);
+            font-size: 0.9rem;
+            word-break: break-all;
+            text-decoration: none;
+        }
+
+        .item-desc {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--primary-light);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .chart-container {
+            height: 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p style="margin-top: 1rem; font-weight: 700;">사이트 분석 중... 잠시만 기다려주세요.</p>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="title-group">
+                <h1>Splashtop JP 통합 모니터링</h1>
+                <p>사이트맵 차분 조사를 통한 신속한 변화 감지 서비스</p>
+            </div>
+            <button class="btn-help" onclick="toggleModal('help-modal', true)">❓ 도움말</button>
+        </header>
+
+        <section class="action-bar">
+            <button class="btn btn-primary" onclick="runScan()">🚀 사이트 분석 실행 (Run Scan)</button>
+            <button class="btn btn-outline" onclick="runCleanup()">🧹 데이터 정제</button>
+            <button class="btn btn-danger" onclick="confirmReset()">🧨 데이터 리셋</button>
+        </section>
+
+        <section class="stats-grid" id="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">현재 전체 URL</div>
+                <span class="stat-value" id="stat-curr-count">--개</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">이전 대비 증감</div>
+                <div class="stat-delta" id="stat-delta">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">오늘 분석 완료</div>
+                <span class="stat-value" id="stat-today-run">--</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">최종 업데이트</div>
+                <div id="stat-last-time" style="font-size: 0.9rem; font-weight: 700; margin-top:0.5rem">미실행</div>
+            </div>
+        </section>
+
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('report')">📋 실시간 리포트</div>
+            <div class="tab" onclick="switchTab('history')">📈 히스토리 및 통계</div>
+            <div class="tab" onclick="switchTab('all-urls')">🔗 전체 URL 목록</div>
+        </div>
+
+        <div id="tab-report">
+            <div id="report-container">
+                <p style="text-align:center; color: var(--text-sub); padding: 3rem;">데이터를 불러오는 중입니다...</p>
+            </div>
+        </div>
+
+        <div id="tab-history" style="display: none;">
+            <div class="chart-container">
+                <canvas id="historyChart"></canvas>
+            </div>
+            <h3 style="margin-top:2rem">최근 조사 결과 (최신 10개)</h3>
+            <div id="history-table-container"></div>
+        </div>
+
+        <div id="tab-all-urls" style="display: none;">
+            <div class="stat-card" style="max-height: 500px; overflow-y: auto;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tbody id="url-list-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <h2 style="margin-top: 0;">📖 사용 가이드</h2>
+            <ol style="padding-left: 1.2rem; line-height: 1.8;">
+                <li><strong>분석 실행</strong>: 상단 버튼을 누르면 사이트맵을 분석하여 신규/수정된 페이지를 찾습니다.</li>
+                <li><strong>기준점</strong>: 오늘 처음 실행한 시점의 데이터를 기준으로 하루 동안의 모든 변화를 추적합니다.</li>
+                <li><strong>상태값 안내</strong>:
+                    <ul>
+                        <li><b style="color:var(--success)">NEW</b>: 새로 추가된 뉴스/블로그</li>
+                        <li><b style="color:var(--warning)">CHANGED</b>: 내용이 바뀐 페이지</li>
+                        <li><b style="color:var(--danger)">DELETED</b>: 사라진 페이지</li>
+                    </ul>
+                </li>
+            </ol>
+            <button class="btn btn-outline" style="width: 100%; margin-top: 1rem;"
+                onclick="toggleModal('help-modal', false)">닫기</button>
+        </div>
+    </div>
+
+    <script>
+        let currentData = {};
+        let historyChart = null;
+
+        async function init() {
+            await refreshData();
+        }
+
+        async function refreshData() {
+            try {
+                const res = await fetch('/api/data');
+                const data = await res.json();
+                currentData = data;
+                renderStats(data.meta);
+                renderReport(data.summary);
+                renderAllUrls(data.structure);
+                renderHistory(data.history);
+            } catch (e) { console.error("Data fetch failed", e); }
+        }
+
+        function renderStats(meta) {
+            if (!meta) return;
+            document.getElementById('stat-curr-count').innerText = (meta.curr_count || 0) + '개';
+            const delta = (meta.curr_count || 0) - (meta.prev_count || 0);
+            const deltaEl = document.getElementById('stat-delta');
+            deltaEl.innerText = (delta >= 0 ? '+' : '') + delta + '개';
+            deltaEl.className = 'stat-delta ' + (delta >= 0 ? 'delta-plus' : 'delta-minus');
+
+            const lastTime = meta.curr_time || "";
+            document.getElementById('stat-last-time').innerText = lastTime.replace('T', ' ').substring(0, 16);
+
+            const isToday = lastTime.startsWith(new Date().toISOString().split('T')[0]);
+            document.getElementById('stat-today-run').innerText = isToday ? "완료" : "미실행";
+        }
+
+        function renderReport(summary) {
+            const container = document.getElementById('report-container');
+            if (!summary || summary.length === 0) {
+                container.innerHTML = '<p style="text-align:center; padding: 2rem;">아직 분석 결과가 없습니다. 스캔을 시작해 주세요.</p>';
+                return;
+            }
+
+            const interesting = summary.filter(s => ['new', 'changed', 'deleted', 'error'].includes(s.status));
+            if (interesting.length === 0) {
+                container.innerHTML = '<div class="stat-card" style="text-align: center; color: var(--success); font-weight: 700;">🎉 감지된 새로운 변화가 없습니다. 사이트가 안정적입니다.</div>';
+                return;
+            }
+
+            let html = `<h3>🔍 감지된 주요 변화 (${interesting.length}건)</h3>`;
+            interesting.forEach(item => {
+                const title = (item.title === 'No Title' || !item.title) ? item.url.split('/').pop() : item.title;
+                html += `
+                <div class="report-item">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <span class="badge badge-${item.status}">${item.status.toUpperCase()}</span>
+                        <span class="item-title">${title}</span>
+                    </div>
+                    <div class="item-content">
+                        <a href="${item.url}" target="_blank" class="url-link">${item.url}</a>
+                        <p class="item-desc">${item.description || '설명 없음'}</p>
+                    </div>
+                </div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function toggleItem(el) {
+            const content = el.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function renderAllUrls(struct) {
+            const body = document.getElementById('url-list-body');
+            let html = '';
+            Object.keys(struct || {}).forEach(url => {
+                html += `<tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border); font-size: 0.85rem;">${url}</td></tr>`;
+            });
+            body.innerHTML = html;
+        }
+
+        function renderHistory(history) {
+            if (!history || history.length === 0) return;
+
+            const labels = history.map(h => h.timestamp.split('T')[0]);
+            const values = history.map(h => h.total_count);
+
+            if (historyChart) historyChart.destroy();
+            const ctx = document.getElementById('historyChart').getContext('2d');
+            historyChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '전체 URL 수',
+                        data: values,
+                        borderColor: '#0055ff',
+                        backgroundColor: 'rgba(0, 85, 255, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // Cumulative Summary (Last 7 Days)
+            const now = new Date();
+            const last7Days = new Date(now.getTime() - (7 * 24 * 60 * 60 * 1000));
+
+            let cumulativeNew = new Set();
+            let cumulativeDel = new Set();
+
+            history.forEach(h => {
+                const hDate = new Date(h.timestamp);
+                if (hDate >= last7Days) {
+                    (h.new_details || []).forEach(u => cumulativeNew.add(u));
+                    (h.deleted_details || []).forEach(u => cumulativeDel.add(u));
+                }
+            });
+
+            let cumuHtml = `
+            <div class="stat-card" style="border-left: 5px solid var(--primary); margin: 2rem 0; background: #f0f7ff;">
+                <h4 style="margin:0 0 0.5rem 0;">📅 최근 7일간 누적 변화 요약</h4>
+                <p style="font-size:0.85rem; color:var(--text-sub); margin-bottom:1rem;">가끔 방문하셔도 괜찮습니다! 지난 일주일간 사이트에 새로 추가되거나 삭제된 모든 페이지를 모아서 보여드립니다.</p>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div>
+                        <b style="color:var(--success)">[+] 일주일간 신규 추가 (${cumulativeNew.size}건)</b>
+                        <ul style="font-size:0.8rem; margin-top:0.5rem; max-height:180px; overflow-y:auto; padding-left:1.2rem; background: white; border-radius: 8px; border: 1px solid var(--border);">
+                            ${Array.from(cumulativeNew).map(u => `<li style="margin-bottom:4px"><a href="${u}" target="_blank" style="color:inherit;">${u.split('/').pop() || u}</a></li>`).join('') || '<li style="color:#aaa; padding:10px;">없음</li>'}
+                        </ul>
+                    </div>
+                    <div>
+                        <b style="color:var(--danger)">[-] 일주일간 삭제/제외 (${cumulativeDel.size}건)</b>
+                        <ul style="font-size:0.8rem; margin-top:0.5rem; max-height:180px; overflow-y:auto; padding-left:1.2rem; background: white; border-radius: 8px; border: 1px solid var(--border);">
+                            ${Array.from(cumulativeDel).map(u => `<li style="margin-bottom:4px">${u.split('/').pop() || u}</li>`).join('') || '<li style="color:#aaa; padding:10px;">없음</li>'}
+                        </ul>
+                    </div>
+                </div>
+            </div>`;
+
+            // Table
+            let tableHtml = cumuHtml + '<h3 style="margin-top:2.5rem">📜 개별 조사 이력</h3><table style="width:100%; border-collapse: collapse; margin-top:1rem; text-align:left; border: 1px solid var(--border);">';
+            tableHtml += '<thead style="background:#f1f5f9"><tr><th style="padding:0.7rem">날짜/시간</th><th>전체</th><th>신규</th><th>삭제</th><th>상세</th></tr></thead><tbody>';
+            history.slice().reverse().forEach((h, idx) => {
+                const rowId = `history-row-${idx}`;
+                const hasDetails = (h.new_count > 0 || h.deleted_count > 0);
+
+                tableHtml += `
+                <tr style="border-bottom:1px solid var(--border)">
+                    <td style="padding:0.6rem; color:var(--text-sub); font-size:0.85rem">${h.timestamp.replace('T', ' ').substring(0, 16)}</td>
+                    <td><b>${h.total_count}</b></td>
+                    <td style="color:var(--success)">+${h.new_count}</td>
+                    <td style="color:var(--danger)">-${h.deleted_count}</td>
+                    <td>${hasDetails ? `<button class="btn-help" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;" onclick="toggleHistoryDetails('${rowId}')">보기</button>` : '-'}</td>
+                </tr>
+                <tr id="${rowId}" style="display:none; background: #fdfdfd; border-bottom: 1px solid var(--border);">
+                    <td colspan="5" style="padding: 1rem; font-size: 0.85rem;">
+                        ${h.new_count > 0 ? `
+                            <div style="margin-bottom:0.5rem"><b style="color:var(--success)">[신규 추가된 페이지]</b></div>
+                            <ul style="margin: 0 0 1rem 0; padding-left: 1.2rem; color: var(--text-sub);">
+                                ${h.new_details.map(url => `<li><a href="${url}" target="_blank" style="color:inherit;">${url}</a></li>`).join('')}
+                            </ul>
+                        ` : ''}
+                        ${h.deleted_count > 0 ? `
+                            <div><b style="color:var(--danger)">[삭제/제외된 페이지]</b></div>
+                            <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-sub);">
+                                ${h.deleted_details.map(url => `<li>${url}</li>`).join('')}
+                            </ul>
+                        ` : ''}
+                    </td>
+                </tr>`;
+            });
+            tableHtml += '</tbody></table>';
+            document.getElementById('history-table-container').innerHTML = tableHtml;
+        }
+
+        function toggleHistoryDetails(id) {
+            const el = document.getElementById(id);
+            el.style.display = el.style.display === 'table-row' ? 'none' : 'table-row';
+        }
+
+        async function runScan() {
+            document.getElementById('loading-overlay').style.display = 'flex';
+            try {
+                const res = await fetch('/api/scan', { method: 'POST' });
+                if (res.ok) await refreshData();
+            } finally {
+                document.getElementById('loading-overlay').style.display = 'none';
+            }
+        }
+
+        async function runCleanup() {
+            if (!confirm("데이터 정제를 실행하시겠습니까?")) return;
+            const res = await fetch('/api/cleanup', { method: 'POST' });
+            if (res.ok) { alert("데이터 정제 완료"); await refreshData(); }
+        }
+
+        async function confirmReset() {
+            if (!confirm("⚠️ 주의: 모든 모니터링 데이터가 영구적으로 삭제됩니다. 계속하시겠습니까?")) return;
+            const res = await fetch('/api/reset', { method: 'POST' });
+            if (res.ok) { window.location.reload(); }
+        }
+
+        function switchTab(name) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('tab-report').style.display = name === 'report' ? 'block' : 'none';
+            document.getElementById('tab-history').style.display = name === 'history' ? 'block' : 'none';
+            document.getElementById('tab-all-urls').style.display = name === 'all-urls' ? 'block' : 'none';
+        }
+
+        function toggleModal(id, show) {
+            document.getElementById(id).style.display = show ? 'flex' : 'none';
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
