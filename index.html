@@ -415,29 +415,37 @@
 
         async function refreshData() {
             try {
-                // GitHub Pages 호환을 위해 상대 경로 사용 및 캐시 방지 쿼리 추가
+                // 현재 페이지의 경로를 기준으로 설정 (GitHub Pages 대응)
+                const baseUrl = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/';
                 const ts = new Date().getTime();
+
                 const fetchJson = async (file) => {
-                    const r = await fetch(`${file}?t=${ts}`);
-                    return r.ok ? await r.json() : (file.includes('history') || file.includes('summary') ? [] : {});
+                    const r = await fetch(`./${file}?t=${ts}`);
+                    if (!r.ok) throw new Error(`Failed to load ${file}`);
+                    return await r.json();
                 };
 
-                const [meta, summary, structure, history] = await Promise.all([
-                    fetchJson('site_report_meta.json'),
-                    fetchJson('site_summary.json'),
-                    fetchJson('site_structure.json'),
-                    fetchJson('monitoring_history.json')
-                ]);
+                // 데이터 로딩
+                const data = {
+                    meta: await fetchJson('site_report_meta.json'),
+                    summary: await fetchJson('site_summary.json'),
+                    structure: await fetchJson('site_structure.json'),
+                    history: await fetchJson('monitoring_history.json')
+                };
 
-                currentData = { meta, summary, structure, history };
-                renderStats(meta);
-                renderReport(summary);
-                renderAllUrls(structure);
-                renderHistory(history);
-            } catch (e) { 
+                currentData = data;
+                renderStats(data.meta);
+                renderReport(data.summary);
+                renderAllUrls(data.structure);
+                renderHistory(data.history);
+            } catch (e) {
                 console.error("Data fetch failed", e);
-                document.getElementById('report-container').innerHTML = 
-                    `<p style="text-align:center; color:var(--danger); padding:2rem;">데이터 로딩 실패. GitHub Actions가 첫 분석을 성공할 때까지 기다려주세요.</p>`;
+                // 좀 더 친절한 에러 메시지
+                document.getElementById('report-container').innerHTML =
+                    `<div class="stat-card" style="text-align:center; padding:3rem;">
+                        <p style="font-size:1.2rem; font-weight:700;">📡 데이터 동기화 중...</p>
+                        <p style="color:var(--text-sub);">GitHub Actions가 첫 분석 결과를 생성 중이거나, 브라우저가 파일을 읽어오는 중입니다. 1~2분 후 새로고침해 주세요.</p>
+                    </div>`;
             }
         }
 
