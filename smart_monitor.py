@@ -326,8 +326,8 @@ def run_targeted_monitor():
         "deleted_details": h_del_urls
     })
     
-    # Keep only last 50 entries for deeper history
-    history = history[-50:]
+    # Keep last 2000 entries (approx. 5.5 years of daily scans)
+    history = history[-2000:]
     
     with HISTORY_FILE.open("w", encoding="utf-8") as f:
         json.dump(history, f, indent=4, ensure_ascii=False)
