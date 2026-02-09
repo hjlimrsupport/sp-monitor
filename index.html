@@ -572,13 +572,20 @@
                 renderAllUrls(data.structure);
                 renderHistory(data.history);
             } catch (e) {
-                console.error("Data fetch failed", e);
-                // 좀 더 친절한 에러 메시지
-                document.getElementById('report-container').innerHTML =
-                    `<div class="stat-card" style="text-align:center; padding:3rem;">
+                console.warn("Data fetch warning (Check if files exist):", e);
+                // 파일이 아예 없는 초기 상태일 수 있으므로, 무조건 에러 화면을 띄우기보다
+                // '데이터 없음' 상태로 렌더링을 시도하거나, 진짜 실패 메시지를 띄움
+
+                // 만약 단 하나라도 로딩에 실패했다면 초기화 상태로 간주
+                const container = document.getElementById('report-container');
+                if (!currentData.summary) {
+                    container.innerHTML =
+                        `<div class="stat-card" style="text-align:center; padding:3rem;">
                         <p style="font-size:1.2rem; font-weight:700;">${t.syncing}</p>
-                        <p style="color:var(--text-sub);">${t.syncSub}</p>
+                        <p style="color:var(--text-sub); margin-top:0.5rem">${t.syncSub}</p>
+                        <button class="btn btn-outline" style="margin-top:1rem" onclick="location.reload()">🔄 새로고침 (Refresh)</button>
                     </div>`;
+                }
             }
         }
 
