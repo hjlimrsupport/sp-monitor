@@ -604,6 +604,14 @@
             document.getElementById('stat-today-run').innerText = isToday ? (lang === 'ko' ? "완료" : "完了") : (lang === 'ko' ? "미실행" : "未実行");
         }
 
+        function safeDecode(str) {
+            try {
+                return decodeURIComponent(str);
+            } catch (e) {
+                return str;
+            }
+        }
+
         function renderReport(summary) {
             const container = document.getElementById('report-container');
             if (!summary || summary.length === 0) {
@@ -619,7 +627,7 @@
 
             let html = `<h3>${t.reportHeader} (${interesting.length}${t.count})</h3>`;
             interesting.forEach(item => {
-                const title = (item.title === 'No Title' || !item.title) ? item.url.split('/').pop() : item.title;
+                const title = (item.title === 'No Title' || !item.title) ? safeDecode(item.url.split('/').pop()) : item.title;
                 html += `
                 <div class="report-item">
                     <div class="item-header" onclick="toggleItem(this)">
@@ -700,13 +708,13 @@
                     <div>
                         <b style="color:var(--success)">${t.newTitle} (${cumulativeNew.size}${t.count})</b>
                         <ul style="font-size:0.8rem; margin-top:0.5rem; max-height:180px; overflow-y:auto; padding-left:1.2rem; background: white; border-radius: 8px; border: 1px solid var(--border);">
-                            ${Array.from(cumulativeNew).map(u => `<li style="margin-bottom:4px"><a href="${u}" target="_blank" style="color:inherit;">${u.split('/').pop() || u}</a></li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
+                            ${Array.from(cumulativeNew).map(u => `<li style="margin-bottom:4px"><a href="${u}" target="_blank" style="color:inherit;">${safeDecode(u.split('/').pop() || u)}</a></li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
                         </ul>
                     </div>
                     <div>
                         <b style="color:var(--danger)">${t.delTitle} (${cumulativeDel.size}${t.count})</b>
                         <ul style="font-size:0.8rem; margin-top:0.5rem; max-height:180px; overflow-y:auto; padding-left:1.2rem; background: white; border-radius: 8px; border: 1px solid var(--border);">
-                            ${Array.from(cumulativeDel).map(u => `<li style="margin-bottom:4px">${u.split('/').pop() || u}</li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
+                            ${Array.from(cumulativeDel).map(u => `<li style="margin-bottom:4px">${safeDecode(u.split('/').pop() || u)}</li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
                         </ul>
                     </div>
                 </div>
