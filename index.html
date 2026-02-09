@@ -652,7 +652,7 @@
             const body = document.getElementById('url-list-body');
             let html = '';
             Object.keys(struct || {}).sort().forEach(url => {
-                html += `<tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border); font-size: 0.85rem;"><a href="${url}" target="_blank" style="color:inherit; text-decoration:none;">${url}</a></td></tr>`;
+                html += `<tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border); font-size: 0.85rem;"><a href="${url}" target="_blank" style="color:inherit; text-decoration:none;">${safeDecode(url)}</a></td></tr>`;
             });
             body.innerHTML = html;
         }
