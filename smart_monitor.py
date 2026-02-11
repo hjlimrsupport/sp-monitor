@@ -110,10 +110,15 @@ def get_page_info(url):
             if any(path in url for path in DYNAMIC_PATHS):
                 for a in soup.find_all('a', href=True):
                     href = a['href']
-                    full_url = urljoin(base_domain, href).split('#')[0].rstrip('/')
-                    if full_url.startswith(base_domain) and not any(ext in full_url.lower() for ext in ['.pdf', '.zip', '.jpg', '.png']):
-                        if not should_ignore(full_url):
-                            discovered_links.append(full_url)
+                    # Normalize: Join, strip fragment, strip query params
+                    full_url = urljoin(base_domain, href)
+                    parsed = urlparse(full_url)
+                    # Reconstruct without query and fragment
+                    clean_url = urlunparse((parsed.scheme, parsed.netloc, parsed.path, '', '', '')).rstrip('/')
+                    
+                    if clean_url.startswith(base_domain) and not any(ext in clean_url.lower() for ext in ['.pdf', '.zip', '.jpg', '.png']):
+                        if not should_ignore(clean_url):
+                            discovered_links.append(clean_url)
 
             title = soup.title.string.strip() if soup.title else "No Title"
             if not title: title = "No Title"
@@ -125,12 +130,12 @@ def get_page_info(url):
             content_hash = hashlib.sha256(cleaned_content.encode('utf-8')).hexdigest()
             
             return {
-                "url": url,
+                "url": url, # Keep original requested URL for matching
                 "title": title,
                 "description": description,
                 "hash": content_hash,
                 "status": "success",
-                "links": list(set(discovered_links)) # Share discovered links back
+                "links": list(set(discovered_links)) # Share CLEAN links
             }
         elif response.status_code == 404:
             return {"url": url, "status": "404"}
