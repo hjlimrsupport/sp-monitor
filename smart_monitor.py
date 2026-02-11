@@ -104,21 +104,9 @@ def get_page_info(url):
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
             
-            # --- DEEP DISCOVERY: Extract internal links to find unlisted pages ---
-            base_domain = "https://www.splashtop.co.jp"
+            # --- DEEP DISCOVERY REMOVED ---
+            # We now strictly rely on the Sitemap to avoid broken/garbage URLs found in HTML body.
             discovered_links = []
-            if any(path in url for path in DYNAMIC_PATHS):
-                for a in soup.find_all('a', href=True):
-                    href = a['href']
-                    # Normalize: Join, strip fragment, strip query params
-                    full_url = urljoin(base_domain, href)
-                    parsed = urlparse(full_url)
-                    # Reconstruct without query and fragment
-                    clean_url = urlunparse((parsed.scheme, parsed.netloc, parsed.path, '', '', '')).rstrip('/')
-                    
-                    if clean_url.startswith(base_domain) and not any(ext in clean_url.lower() for ext in ['.pdf', '.zip', '.jpg', '.png']):
-                        if not should_ignore(clean_url):
-                            discovered_links.append(clean_url)
 
             title = soup.title.string.strip() if soup.title else "No Title"
             if not title: title = "No Title"
@@ -130,12 +118,12 @@ def get_page_info(url):
             content_hash = hashlib.sha256(cleaned_content.encode('utf-8')).hexdigest()
             
             return {
-                "url": url, # Keep original requested URL for matching
+                "url": url, 
                 "title": title,
                 "description": description,
                 "hash": content_hash,
                 "status": "success",
-                "links": list(set(discovered_links)) # Share CLEAN links
+                "links": [] # No more deep discovery
             }
         elif response.status_code == 404:
             return {"url": url, "status": "404"}
