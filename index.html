@@ -369,10 +369,17 @@
         </div>
 
         <div id="tab-history" style="display: none;">
-            <div class="chart-container">
-                <canvas id="historyChart"></canvas>
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                <div class="chart-container">
+                    <h4 style="margin-top:0">${t.historyTitle}</h4>
+                    <canvas id="historyChart"></canvas>
+                </div>
+                <div class="chart-container" style="background: #f8fafc; border: 1px solid var(--border);">
+                    <h4 style="margin-top:0; color:var(--primary)">🔥 ${t.hotSpotTitle || '인기 업데이트 분야'}</h4>
+                    <div id="hotspot-list" style="font-size: 0.9rem;"></div>
+                </div>
             </div>
-            <h3 style="margin-top:2rem">최근 조사 결과 (최신 10개)</h3>
+            <h3 style="margin-top:2rem">${t.historyHeader} (최근 30개)</h3>
             <div id="history-table-container"></div>
         </div>
 
@@ -446,7 +453,18 @@
                 delDetail: "[삭제/제외된 페이지]",
                 historyHeader: "📜 개별 조사 이력",
                 syncing: "📡 데이터 동기화 중...",
-                syncSub: "GitHub Actions가 첫 분석 결과를 생성 중이거나, 브라우저가 파일을 읽어오는 중입니다. 1~2분 후 새로고침해 주세요."
+                syncSub: "GitHub Actions가 첫 분석 결과를 생성 중이거나, 브라우저가 파일을 읽어오는 중입니다. 1~2분 후 새로고침해 주세요.",
+                hotSpotTitle: "변동이 빈번한 분야 (Hotspots)",
+                pathLabels: {
+                    "/knowhow": "지식 저장소 (Know-how)",
+                    "/achievements": "도입사례 (Case Studies)",
+                    "/news": "뉴스 및 공지",
+                    "/products-service": "제품 및 서비스",
+                    "/videos": "영상 라이브러리",
+                    "/download_news": "다운로드 정보",
+                    "/blog": "공식 블로그",
+                    "/": "홈페이지 메인"
+                }
             },
             ja: {
                 title: "Splashtop JP 統合モニタリング",
@@ -756,6 +774,40 @@
             });
             tableHtml += '</tbody></table>';
             document.getElementById('history-table-container').innerHTML = tableHtml;
+
+            // 🎯 NEW: Hotspot Analysis (Path Activity)
+            const pathCounter = {};
+            history.forEach(h => {
+                const changes = [...(h.new_details || []), ...(h.deleted_details || [])];
+                changes.forEach(url => {
+                    if (url.includes('?')) return; // Ignore tracking URL clones
+                    const path = '/' + (url.split('co.jp/')[1] || '').split('/')[0];
+                    pathCounter[path] = (pathCounter[path] || 0) + 1;
+                });
+            });
+
+            const sortedPaths = Object.entries(pathCounter).sort((a, b) => b[1] - a[1]);
+            const hotspotList = document.getElementById('hotspot-list');
+            let hotspotHtml = '<div style="display:flex; flex-direction:column; gap:0.6rem; margin-top:0.5rem;">';
+
+            const maxVal = sortedPaths[0] ? sortedPaths[0][1] : 1;
+
+            sortedPaths.slice(0, 6).forEach(([path, count]) => {
+                const label = t.pathLabels[path] || path;
+                const percent = (count / maxVal) * 100;
+                hotspotHtml += `
+                    <div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom: 2px;">
+                            <span style="font-weight:700">${label}</span>
+                            <span style="color:var(--primary); font-family:monospace">${count} pts</span>
+                        </div>
+                        <div style="width:100%; height:6px; background:#e2e8f0; border-radius:10px; overflow:hidden">
+                            <div style="width:${percent}%; height:100%; background:var(--primary); border-radius:10px"></div>
+                        </div>
+                    </div>`;
+            });
+            hotspotHtml += '</div>';
+            hotspotList.innerHTML = hotspotHtml;
         }
 
         function toggleHistoryDetails(id) {
