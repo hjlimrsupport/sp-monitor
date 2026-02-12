@@ -231,13 +231,16 @@ def run_targeted_monitor():
         info = url_to_info.get(url)
         
         # If this is a NEW url and we couldn't fetch it, DISCARD it (it's a ghost URL)
-        if url not in baseline_state and (not info or info["status"] != "success"):
+        # Stricter: Also discard if it returns success but has neither title nor description (common for garbage pages)
+        is_success = info and info["status"] == "success"
+        has_content = info and (info.get("title") != "No Title" or info.get("description") != "No Description")
+        
+        if url not in baseline_state and (not is_success or not has_content):
             if url in new_master_state: del new_master_state[url]
             continue
 
-        # If it was in baseline but 404'd today, it's effectively deleted (handled later if skipped here)
+        # If it was in baseline but 404'd today, it's effectively deleted
         if url in baseline_state and info and info["status"] == "404":
-            # Let the deleted_urls_since_baseline logic handle it or mark it here
             continue
 
         # Detect Status based on Baseline
