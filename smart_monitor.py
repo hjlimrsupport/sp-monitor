@@ -295,7 +295,7 @@ def run_targeted_monitor():
     # 5. Save Results
     report_meta = {
         "prev_count": len(baseline_state),
-        "curr_count": len(sitemap_set),
+        "curr_count": len(new_master_state),
         "prev_time": min([v.get("last_checked", "") for v in baseline_state.values()] + [current_run_time]) if baseline_state else "Initial",
         "curr_time": current_run_time,
         "total_checked": len(urls_to_fetch)
@@ -317,14 +317,14 @@ def run_targeted_monitor():
         except: pass
     
     # Calculate counts and details for history
-    h_new_urls = list(new_urls_since_baseline)
-    h_del_urls = list(deleted_urls_since_baseline)
+    h_new_urls = [item["url"] for item in summary_data if item["status"] == "new"]
+    h_del_urls = [item["url"] for item in summary_data if item["status"] == "deleted"]
     h_chg_count = sum(1 for item in summary_data if item["status"] == "changed")
     
     history.append({
         "timestamp": current_run_time,
         "date": today_str,
-        "total_count": len(sitemap_set),
+        "total_count": len(new_master_state),
         "new_count": len(h_new_urls),
         "deleted_count": len(h_del_urls),
         "changed_count": h_chg_count,
@@ -340,7 +340,7 @@ def run_targeted_monitor():
 
     # Update site_structure.json for external visibility
     with STRUCTURE_FILE.open("w", encoding="utf-8") as f:
-        json.dump({url: 2 for url in sitemap_set}, f, indent=4, ensure_ascii=False)
+        json.dump({url: 2 for url in new_master_state.keys()}, f, indent=4, ensure_ascii=False)
 
     print(f"\n✨ Monitoring complete. XML Diff found {len(new_urls_since_baseline)} new and {len(deleted_urls_since_baseline)} deleted pages.")
     return True
