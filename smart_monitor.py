@@ -55,7 +55,7 @@ def fetch_sitemap_urls(url, visited_sitemaps=None):
                 urls = re.findall(r'<loc>(.*?)</loc>', content)
             
             for u in urls:
-                u = u.strip().split('#')[0].rstrip('/')
+                u = u.strip().split('#')[0]
                 if u.startswith("http") and not u.endswith('.xml'):
                     all_urls.append(u)
                     
