@@ -91,9 +91,9 @@ def is_new_only(url):
 
 def normalize_url(url):
     parsed = urlparse(url)
-    # Strip query parameters and fragments
+    # Strip query parameters and fragments but PRESERVE the path exactly
     normalized = urlunparse((parsed.scheme, parsed.netloc, parsed.path, '', '', ''))
-    return normalized.rstrip('/')
+    return normalized
 
 def get_page_info(url):
     try:
