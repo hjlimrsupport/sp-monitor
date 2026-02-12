@@ -70,6 +70,8 @@ IGNORE_PATTERNS = [
     r'/tag/',        # Tag pages
     r'/category/',   # Category pages
     r'/author/',     # Author pages
+    r'/download_news/', # Technical stub pages (meaningless)
+    r'/videos/',        # Video placeholder pages (meaningless)
     r'\?search=',    # Search results
     r'/(201[0-9]|202[0-3])[0-1][0-9]', # Old news articles (YYYYMM)
     r'/(201[0-9]|202[0-3])/'           # Old news articles (YYYY/MM style)
