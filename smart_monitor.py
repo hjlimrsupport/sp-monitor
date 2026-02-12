@@ -230,6 +230,16 @@ def run_targeted_monitor():
         status = "stable"
         info = url_to_info.get(url)
         
+        # If this is a NEW url and we couldn't fetch it, DISCARD it (it's a ghost URL)
+        if url not in baseline_state and (not info or info["status"] != "success"):
+            if url in new_master_state: del new_master_state[url]
+            continue
+
+        # If it was in baseline but 404'd today, it's effectively deleted (handled later if skipped here)
+        if url in baseline_state and info and info["status"] == "404":
+            # Let the deleted_urls_since_baseline logic handle it or mark it here
+            continue
+
         # Detect Status based on Baseline
         if url in new_urls_since_baseline or (url in final_url_set and url not in sitemap_set):
             status = "new"
