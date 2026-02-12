@@ -720,21 +720,21 @@
 
             let cumuHtml = `
             <div class="stat-card" style="border-left: 5px solid var(--primary); margin: 2rem 0; background: #f0f7ff;">
-                <h4 style="margin:0 0 0.5rem 0;">${t.cumTitle}</h4>
-                <p style="font-size:0.85rem; color:var(--text-sub); margin-bottom:1rem;">${t.cumSub}</p>
-                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
                     <div>
-                        <b style="color:var(--success)">${t.newTitle} (${cumulativeNew.size}${t.count})</b>
-                        <ul style="font-size:0.8rem; margin-top:0.5rem; max-height:180px; overflow-y:auto; padding-left:1.2rem; background: white; border-radius: 8px; border: 1px solid var(--border);">
-                            ${Array.from(cumulativeNew).map(u => `<li style="margin-bottom:4px"><a href="${u}" target="_blank" style="color:inherit;">${safeDecode(u.split('/').pop() || u)}</a></li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
-                        </ul>
+                        <h4 style="margin:0;">${t.cumTitle}</h4>
+                        <p style="font-size:0.85rem; color:var(--text-sub); margin:0.2rem 0 0 0;">${t.cumSub}</p>
                     </div>
-                    <div>
-                        <b style="color:var(--danger)">${t.delTitle} (${cumulativeDel.size}${t.count})</b>
-                        <ul style="font-size:0.8rem; margin-top:0.5rem; max-height:180px; overflow-y:auto; padding-left:1.2rem; background: white; border-radius: 8px; border: 1px solid var(--border);">
-                            ${Array.from(cumulativeDel).map(u => `<li style="margin-bottom:4px">${safeDecode(u.split('/').pop() || u)}</li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
-                        </ul>
-                    </div>
+                    <select id="cum-period-select" onchange="updateCumulativeSummary()" style="padding:0.4rem; border-radius:6px; border:1px solid var(--border); font-family:inherit; font-weight:700;">
+                        <option value="7">최근 7일 (7 Days)</option>
+                        <option value="30">최근 30일 (30 Days)</option>
+                        <option value="90">최근 90일 (90 Days)</option>
+                        <option value="365">최근 1년 (1 Year)</option>
+                        <option value="9999">전체 기록 (All Time)</option>
+                    </select>
+                </div>
+                <div id="cumulative-content-area">
+                    <!-- Dynamic Content -->
                 </div>
             </div>`;
 
@@ -774,6 +774,50 @@
             });
             tableHtml += '</tbody></table>';
             document.getElementById('history-table-container').innerHTML = tableHtml;
+
+            // Global render for cumulative update
+            window.updateCumulativeSummary = function () {
+                const period = parseInt(document.getElementById('cum-period-select').value);
+                const now = new Date();
+                const threshold = new Date(now.getTime() - (period * 24 * 60 * 60 * 1000));
+
+                let cumulativeNew = new Set();
+                let cumulativeDel = new Set();
+
+                // Skip the very first initial scan if it contains too many URLs
+                const meaningfulHistory = history.length > 1 && history[0].total_count > 300 && history[0].new_count > 300
+                    ? history.slice(1)
+                    : history;
+
+                meaningfulHistory.forEach(h => {
+                    const hDate = new Date(h.timestamp);
+                    if (hDate >= threshold || period === 9999) {
+                        (h.new_details || []).forEach(u => {
+                            if (!u.includes('?')) cumulativeNew.add(u);
+                        });
+                        (h.deleted_details || []).forEach(u => cumulativeDel.add(u));
+                    }
+                });
+
+                document.getElementById('cumulative-content-area').innerHTML = `
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div>
+                        <b style="color:var(--success)">${t.newTitle} (${cumulativeNew.size}${t.count})</b>
+                        <ul style="font-size:0.8rem; margin-top:0.5rem; max-height:220px; overflow-y:auto; padding-left:1.2rem; background: white; border-radius: 8px; border: 1px solid var(--border);">
+                            ${Array.from(cumulativeNew).map(u => `<li style="margin-bottom:4px"><a href="${u}" target="_blank" style="color:inherit;">${safeDecode(u.split('/').pop() || u)}</a></li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
+                        </ul>
+                    </div>
+                    <div>
+                        <b style="color:var(--danger)">${t.delTitle} (${cumulativeDel.size}${t.count})</b>
+                        <ul style="font-size:0.8rem; margin-top:0.5rem; max-height:220px; overflow-y:auto; padding-left:1.2rem; background: white; border-radius: 8px; border: 1px solid var(--border);">
+                            ${Array.from(cumulativeDel).map(u => `<li style="margin-bottom:4px">${safeDecode(u.split('/').pop() || u)}</li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
+                        </ul>
+                    </div>
+                </div>`;
+            };
+
+            // Initial call
+            setTimeout(window.updateCumulativeSummary, 50);
 
             // 🎯 NEW: Hotspot Analysis (Path Activity)
             const pathCounter = {};
