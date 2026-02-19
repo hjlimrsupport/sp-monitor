@@ -186,5 +186,19 @@
         "changed_count": 0,
         "new_details": [],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-02-19T01:16:42.381822",
+        "date": "2026-02-19",
+        "total_count": 120,
+        "new_count": 3,
+        "deleted_count": 0,
+        "changed_count": 5,
+        "new_details": [
+            "https://www.splashtop.co.jp/news/feature/260218/",
+            "https://www.splashtop.co.jp/news/feature/",
+            "https://www.splashtop.co.jp/knowhow/splashtop-remote-support%e3%81%afisl-online%e3%81%ae%e3%83%aa%e3%83%97%e3%83%ac%e3%82%a4%e3%82%b9%e5%85%88%e3%81%a8%e3%81%aa%e3%82%8b%e3%81%ae%e3%81%8b%ef%bc%9f/"
+        ],
+        "deleted_details": []
     }
 ]
