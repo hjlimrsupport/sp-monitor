@@ -282,5 +282,21 @@
             "https://www.splashtop.co.jp/news/information/260226/"
         ],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-02-28T01:05:59.093143",
+        "date": "2026-02-28",
+        "total_count": 121,
+        "new_count": 2,
+        "deleted_count": 2,
+        "changed_count": 0,
+        "new_details": [
+            "https://www.splashtop.co.jp/knowhow/82/",
+            "https://www.splashtop.co.jp/knowhow/81/"
+        ],
+        "deleted_details": [
+            "https://www.splashtop.co.jp/knowhow/splashtop-remote-support%e3%81%afisl-online%e3%81%ae%e3%83%aa%e3%83%97%e3%83%ac%e3%82%a4%e3%82%b9%e5%85%88%e3%81%a8%e3%81%aa%e3%82%8b%e3%81%ae%e3%81%8b%ef%bc%9f/",
+            "https://www.splashtop.co.jp/knowhow/fortinet-ssl-vpn%e8%b2%a9%e5%a3%b2%e4%b8%ad%e6%ad%a2%e3%81%ab%e4%bc%b4%e3%81%84%e3%83%aa%e3%83%97%e3%83%ac%e3%82%a4%e3%82%b9%e5%85%88%e6%a4%9c%e8%a8%8e%e4%b8%ad%e3%81%ae%e3%81%8a%e5%ae%a2%e6%a7%98/"
+        ]
     }
 ]
