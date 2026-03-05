@@ -338,5 +338,17 @@
         "changed_count": 0,
         "new_details": [],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-03-05T01:14:01.937332",
+        "date": "2026-03-05",
+        "total_count": 122,
+        "new_count": 1,
+        "deleted_count": 0,
+        "changed_count": 0,
+        "new_details": [
+            "https://www.splashtop.co.jp/knowhow/83/"
+        ],
+        "deleted_details": []
     }
 ]
