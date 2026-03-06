@@ -350,5 +350,15 @@
             "https://www.splashtop.co.jp/knowhow/83/"
         ],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-03-06T01:17:21.726268",
+        "date": "2026-03-06",
+        "total_count": 122,
+        "new_count": 0,
+        "deleted_count": 0,
+        "changed_count": 0,
+        "new_details": [],
+        "deleted_details": []
     }
 ]
