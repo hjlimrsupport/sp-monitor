@@ -431,10 +431,10 @@
                 noChange: "🎉 감지된 새로운 변화가 없습니다. 사이트가 안정적입니다.",
                 loading: "분석 중...",
                 scaning: "사이트 분석 중... 잠시만 기다려주세요.",
-                cumTitle: "📅 최근 30일간 누적 변화 요약",
-                cumSub: "최근 한 달간 사이트에 새로 추가되거나 삭제된 모든 페이지를 모아서 보여드립니다.",
-                newTitle: "[+] 한달간 신규 추가",
-                delTitle: "[-] 한달간 삭제/제외",
+                cumTitle: "📅 최근 7일간 누적 변화 요약",
+                cumSub: "최근 7일간 사이트에 새로 추가되거나 삭제된 모든 페이지를 모아서 보여드립니다.",
+                newTitle: "[+] 7일간 신규 추가",
+                delTitle: "[-] 7일간 삭제/제외",
                 historyTitle: "📜 최근 조사 이력 (최신 30회)",
                 status: "상태",
                 url: "주소",
@@ -483,10 +483,10 @@
                 noChange: "🎉 前回の調査以降、新しい変更は検知されませんでした。サイトは安定しています。",
                 loading: "分析中...",
                 scaning: "サイト分析中... 少々お待ちください。",
-                cumTitle: "📅 直近1ヶ月間の累積変更要約",
-                cumSub: "過去1ヶ月間にサイトへ新たに追加または削除された全ページをまとめて表示します。",
-                newTitle: "[+] 1ヶ月以内の新規追加",
-                delTitle: "[-] 1ヶ月以内の削除/除外",
+                cumTitle: "📅 直近7日間の累積変更要約",
+                cumSub: "過去7日間にサイトへ新たに追加または削除された全ページをまとめて表示します。",
+                newTitle: "[+] 7日以内の新規追加",
+                delTitle: "[-] 7日以内の削除/除外",
                 historyTitle: "📜 最近の調査履歴 (最新30件)",
                 status: "状態",
                 url: "アドレス",
@@ -713,16 +713,16 @@
                 }
             });
 
-            // Cumulative Summary (Default Last 30 Days)
+            // Cumulative Summary (Default Last 7 Days)
             const now = new Date();
-            const last30Days = new Date(now.getTime() - (30 * 24 * 60 * 60 * 1000));
+            const last7Days = new Date(now.getTime() - (7 * 24 * 60 * 60 * 1000));
 
             let cumulativeNew = new Set();
             let cumulativeDel = new Set();
 
             history.forEach(h => {
                 const hDate = new Date(h.timestamp);
-                if (hDate >= last30Days) {
+                if (hDate >= last7Days) {
                     (h.new_details || []).forEach(u => cumulativeNew.add(u));
                     (h.deleted_details || []).forEach(u => cumulativeDel.add(u));
                 }
@@ -736,8 +736,8 @@
                         <p style="font-size:0.85rem; color:var(--text-sub); margin:0.2rem 0 0 0;">${t.cumSub}</p>
                     </div>
                     <select id="cum-period-select" onchange="updateCumulativeSummary()" style="padding:0.4rem; border-radius:6px; border:1px solid var(--border); font-family:inherit; font-weight:700;">
-                        <option value="7">최근 7일 (7 Days)</option>
-                        <option value="30" selected>최근 30일 (30 Days)</option>
+                        <option value="7" selected>최근 7일 (7 Days)</option>
+                        <option value="30">최근 30일 (30 Days)</option>
                         <option value="90">최근 90일 (90 Days)</option>
                         <option value="365">최근 1년 (1 Year)</option>
                         <option value="9999">전체 기록 (All Time)</option>
@@ -814,13 +814,13 @@
                     <div>
                         <b style="color:var(--success)">${t.newTitle} (${cumulativeNew.size}${t.count})</b>
                         <ul style="font-size:0.8rem; margin-top:0.5rem; max-height:220px; overflow-y:auto; padding-left:1.2rem; background: white; border-radius: 8px; border: 1px solid var(--border);">
-                            ${Array.from(cumulativeNew).map(u => `<li style="margin-bottom:4px"><a href="${u}" target="_blank" style="color:inherit;">${safeDecode(u.split('/').pop() || u)}</a></li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
+                            ${Array.from(cumulativeNew).reverse().map(u => `<li style="margin-bottom:4px"><a href="${u}" target="_blank" style="color:inherit;">${safeDecode(u.split('/').pop() || u)}</a></li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
                         </ul>
                     </div>
                     <div>
                         <b style="color:var(--danger)">${t.delTitle} (${cumulativeDel.size}${t.count})</b>
                         <ul style="font-size:0.8rem; margin-top:0.5rem; max-height:220px; overflow-y:auto; padding-left:1.2rem; background: white; border-radius: 8px; border: 1px solid var(--border);">
-                            ${Array.from(cumulativeDel).map(u => `<li style="margin-bottom:4px">${safeDecode(u.split('/').pop() || u)}</li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
+                            ${Array.from(cumulativeDel).reverse().map(u => `<li style="margin-bottom:4px">${safeDecode(u.split('/').pop() || u)}</li>`).join('') || `<li style="color:#aaa; padding:10px;">${t.none}</li>`}
                         </ul>
                     </div>
                 </div>`;
