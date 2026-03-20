@@ -497,5 +497,19 @@
             "https://www.splashtop.co.jp/achievements/imaging/260318-2/"
         ],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-03-20T01:14:16.529171",
+        "date": "2026-03-20",
+        "total_count": 129,
+        "new_count": 3,
+        "deleted_count": 0,
+        "changed_count": 1,
+        "new_details": [
+            "https://www.splashtop.co.jp/achievements/food/260319/",
+            "https://www.splashtop.co.jp/achievements/food/260318_2/",
+            "https://www.splashtop.co.jp/news/information/260319/"
+        ],
+        "deleted_details": []
     }
 ]
