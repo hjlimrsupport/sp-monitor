@@ -645,5 +645,15 @@
             "https://www.splashtop.co.jp/news/information/260402/"
         ],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-04-03T01:23:01.622946",
+        "date": "2026-04-03",
+        "total_count": 131,
+        "new_count": 0,
+        "deleted_count": 0,
+        "changed_count": 0,
+        "new_details": [],
+        "deleted_details": []
     }
 ]
