@@ -757,5 +757,20 @@
         "changed_count": 0,
         "new_details": [],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-04-14T01:29:55.525913",
+        "date": "2026-04-14",
+        "total_count": 133,
+        "new_count": 2,
+        "deleted_count": 1,
+        "changed_count": 0,
+        "new_details": [
+            "https://www.splashtop.co.jp/knowhow/85/",
+            "https://www.splashtop.co.jp/knowhow/84/"
+        ],
+        "deleted_details": [
+            "https://www.splashtop.co.jp/knowhow/83-2/"
+        ]
     }
 ]
