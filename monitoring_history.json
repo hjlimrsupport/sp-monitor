@@ -772,5 +772,17 @@
         "deleted_details": [
             "https://www.splashtop.co.jp/knowhow/83-2/"
         ]
+    },
+    {
+        "timestamp": "2026-04-15T01:26:31.904346",
+        "date": "2026-04-15",
+        "total_count": 134,
+        "new_count": 1,
+        "deleted_count": 0,
+        "changed_count": 1,
+        "new_details": [
+            "https://www.splashtop.co.jp/news/release/260414/"
+        ],
+        "deleted_details": []
     }
 ]
