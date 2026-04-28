@@ -906,5 +906,18 @@
         "changed_count": 0,
         "new_details": [],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-04-28T02:00:00.739412",
+        "date": "2026-04-28",
+        "total_count": 137,
+        "new_count": 2,
+        "deleted_count": 0,
+        "changed_count": 1,
+        "new_details": [
+            "https://www.splashtop.co.jp/news/information/260427/",
+            "https://www.splashtop.co.jp/achievements/information/sms/"
+        ],
+        "deleted_details": []
     }
 ]
