@@ -1155,5 +1155,17 @@
             "https://www.splashtop.co.jp/achievements/imaging/260521/"
         ],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-05-22T02:28:49.712396",
+        "date": "2026-05-22",
+        "total_count": 141,
+        "new_count": 1,
+        "deleted_count": 0,
+        "changed_count": 1,
+        "new_details": [
+            "https://www.splashtop.co.jp/news/release/260521/"
+        ],
+        "deleted_details": []
     }
 ]
