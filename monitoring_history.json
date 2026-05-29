@@ -1227,5 +1227,18 @@
         "changed_count": 0,
         "new_details": [],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-05-29T02:11:23.359933",
+        "date": "2026-05-29",
+        "total_count": 143,
+        "new_count": 2,
+        "deleted_count": 0,
+        "changed_count": 1,
+        "new_details": [
+            "https://www.splashtop.co.jp/news/information/260529/",
+            "https://www.splashtop.co.jp/achievements/construction/260529/"
+        ],
+        "deleted_details": []
     }
 ]
