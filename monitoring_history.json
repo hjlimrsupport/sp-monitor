@@ -1240,5 +1240,20 @@
             "https://www.splashtop.co.jp/achievements/construction/260529/"
         ],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-05-30T02:07:15.386539",
+        "date": "2026-05-30",
+        "total_count": 144,
+        "new_count": 2,
+        "deleted_count": 1,
+        "changed_count": 1,
+        "new_details": [
+            "https://www.splashtop.co.jp/achievements/imaging/260529/",
+            "https://www.splashtop.co.jp/knowhow/soliton-securedesktop/"
+        ],
+        "deleted_details": [
+            "https://www.splashtop.co.jp/achievements/construction/260529/"
+        ]
     }
 ]
