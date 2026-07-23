@@ -1759,5 +1759,17 @@
         "changed_count": 0,
         "new_details": [],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-07-23T01:52:03.923689",
+        "date": "2026-07-23",
+        "total_count": 152,
+        "new_count": 1,
+        "deleted_count": 0,
+        "changed_count": 1,
+        "new_details": [
+            "https://www.splashtop.co.jp/news/release/260722/"
+        ],
+        "deleted_details": []
     }
 ]
