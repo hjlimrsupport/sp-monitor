@@ -1883,5 +1883,17 @@
         "changed_count": 0,
         "new_details": [],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-08-04T01:27:54.244257",
+        "date": "2026-08-04",
+        "total_count": 152,
+        "new_count": 0,
+        "deleted_count": 1,
+        "changed_count": 0,
+        "new_details": [],
+        "deleted_details": [
+            "https://www.splashtop.co.jp/knowhow/3-monthfreestandaloneaem/"
+        ]
     }
 ]
