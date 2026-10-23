@@ -2631,5 +2631,17 @@
         "changed_count": 0,
         "new_details": [],
         "deleted_details": []
+    },
+    {
+        "timestamp": "2026-10-23T02:33:11.419377",
+        "date": "2026-10-23",
+        "total_count": 156,
+        "new_count": 1,
+        "deleted_count": 0,
+        "changed_count": 1,
+        "new_details": [
+            "https://www.splashtop.co.jp/news/information/261022/"
+        ],
+        "deleted_details": []
     }
 ]
